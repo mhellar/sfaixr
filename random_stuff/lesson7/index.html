@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <script src="../js/aframe.min.js"></script>
+    <script>
+        // register your component here with a name
+        AFRAME.registerComponent('hello-world', {
+            init: function () {
+                for (let i = 1; i < 32; i++) {
+                    var knot = document.createElement('a-torus-knot');
+                    knot.setAttribute('color', 'green');
+                    knot.setAttribute('position', i + ' ' + i + ' ' + -5);
+                    knot.setAttribute('scale', 'i i i');
+                    knot.setAttribute('rotation', i + ' ' + i + ' ' + i);
+                    knot.setAttribute('radius', i);
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'rotation');
+                    anim.setAttribute('dur', '30000');
+                    anim.setAttribute('to', i * 10 + ' ' + i * 10 + ' ' + i * 10);
+                    anim.setAttribute('repeat', 'indefinite');
+                    knot.appendChild(anim)
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'position');
+                    anim.setAttribute('dur', '30000');
+                    anim.setAttribute('to', '0 2 -7');
+                    anim.setAttribute('repeat', 'indefinite');
+                    knot.appendChild(anim)
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'scale');
+                    anim.setAttribute('dur', '30000');
+                    anim.setAttribute('to', '3 3 3');
+                    anim.setAttribute('repeat', 'indefinite');
+                    knot.appendChild(anim)
+
+
+                    this.el.appendChild(knot);
+
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- Attach components to an entity tag by adding the name -->
+        <a-entity hello-world></a-entity>
+        <!-- uncomment to pass an argument -->
+        <!-- <a-entity hello-world=" message: cool news! " position="0 2 -4 "> -->
+        <!-- 
+            <a-entity camera look-controls wasd-controls></a-entity> -->
+        <a-plane rotation="-90 0 0" color="red" width="50" height="50"></a-plane>
+
+    </a-scene>
+</body>
+<script>
+</script>
+
+</html>

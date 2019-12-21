@@ -1,0 +1,292 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="../js/aframe-curve-component.min.js"></script>
+    <script src="../js/aframe-alongpath-component.min.js"></script>
+    <script src="../js/aframe-environment-component.min.js"></script>
+
+
+    <script>
+        // register your component here with a name
+        AFRAME.registerComponent('hello-world', {
+            schema: {
+                amount: {
+                    type: 'number',
+                    default: 10
+                },
+                color: {
+                    type: 'color',
+                    default: 'red'
+                },
+                duration: {
+                    type: 'number',
+                    default: 10000
+                },
+                randScaleMax: {
+                    type: 'number',
+                    default: 3
+                },
+            },
+            //custom function
+            getRandomInt: function (min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+            },
+
+            getRandomColor: function () {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            },
+
+
+            init: function () {
+
+                for (let i = 1; i < this.data.amount; i++) {
+                    let s = this.getRandomInt(1, this.data.randScaleMax);
+                    let box = document.createElement('a-obj-model');
+                    box.setAttribute('src', 'models/jewel.obj');
+                    box.setAttribute('color', this.getRandomColor());
+                    box.setAttribute('position', this.getRandomInt(-60, 60) + ' ' + this.getRandomInt(-
+                        -60, 60) + ' ' + this.getRandomInt(-60, 60));
+                    box.setAttribute('scale', s + ' ' + s + ' ' + s);
+                    // box.setAttribute('scale', '20 20 20');
+                    box.setAttribute('rotation', '0 0 ' + this.getRandomInt(-180, 180));
+                    box.setAttribute('radius', i);
+                    box.setAttribute('metalness', 1);
+                    box.setAttribute('emissiveIntensity', 1);
+                    box.setAttribute('flatShading', 0);
+                    // box.setAttribute('transparent', 'true');
+                    // box.setAttribute('opacity', this.getRandomInt(1, 9) * .1);
+
+                    box.setAttribute('animation', {
+                        property: 'position',
+                        dir: 'alternate',
+                        dur: this.getRandomInt(2000, 30000),
+                        delay: 2000,
+                        to: this.getRandomInt(-100, 100) + ' ' + this.getRandomInt(-100, 100) + ' ' +
+                            this.getRandomInt(-100, 100),
+                        easing: 'easeInSine',
+                        loop: true
+                    });
+
+                    box.setAttribute('animation__rot', {
+                        property: 'rotation',
+                        dir: 'alternate',
+                        dur: this.getRandomInt(10000, 40000),
+                        to: this.getRandomInt(0, 360) + ' ' + this.getRandomInt(0, 360) + ' ' +
+                            this.getRandomInt(0, 360),
+                        easing: 'easeInSine',
+                        loop: true
+                    });
+
+                    // box.setAttribute('animation__scale', {
+                    //     property: 'material.color',
+                    //     dir: 'alternate',
+                    //     dur: this.getRandomInt(10000, 30000),
+                    //     to: '4 4 4',
+                    //     easing: 'easeInSine',
+                    //     loop: true
+                    // });
+
+
+                    this.el.appendChild(box);
+
+                }
+            }
+        });
+
+        AFRAME.registerComponent('probe', {
+            schema: {
+                amount: {
+                    type: 'number',
+                    default: 10
+                },
+                color: {
+                    type: 'color',
+                    default: 'red'
+                },
+                duration: {
+                    type: 'number',
+                    default: 10000
+                },
+                randScaleMax: {
+                    type: 'number',
+                    default: 3
+                },
+            },
+            //custom function
+            getRandomInt: function (min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+            },
+
+            getRandomColor: function () {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            },
+
+
+            init: function () {
+
+                for (let i = 1; i < this.data.amount; i++) {
+                    let s = this.getRandomInt(1, this.data.randScaleMax);
+                    let box = document.createElement('a-obj-model');
+                    box.setAttribute('src', 'models/probe.obj');
+                    box.setAttribute('color', this.getRandomColor());
+                    box.setAttribute('position', this.getRandomInt(-60, 60) + ' ' + this.getRandomInt(-
+                        -60, 60) + ' ' + this.getRandomInt(-60, 60));
+                    box.setAttribute('scale', s + ' ' + s + ' ' + s);
+                    // box.setAttribute('scale', '20 20 20');
+                    box.setAttribute('rotation', '0 0 ' + this.getRandomInt(-180, 180));
+                    box.setAttribute('radius', i);
+                    box.setAttribute('metalness', 1);
+                    box.setAttribute('emissiveIntensity', 1);
+                    box.setAttribute('flatShading', 0);
+                    // box.setAttribute('transparent', 'true');
+                    // box.setAttribute('opacity', this.getRandomInt(1, 9) * .1);
+
+                    box.setAttribute('animation', {
+                        property: 'position',
+                        dir: 'alternate',
+                        dur: this.getRandomInt(5000, 30000),
+                        delay: 2000,
+                        to: this.getRandomInt(-100, 100) + ' ' + this.getRandomInt(-100, 100) + ' ' +
+                            this.getRandomInt(-100, 100),
+                        easing: 'easeInSine',
+                        loop: true
+                    });
+
+                    box.setAttribute('animation__rot', {
+                        property: 'rotation',
+                        dir: 'alternate',
+                        dur: this.getRandomInt(10000, 40000),
+                        to: this.getRandomInt(0, 360) + ' ' + this.getRandomInt(0, 360) + ' ' +
+                            this.getRandomInt(0, 360),
+                        easing: 'easeInSine',
+                        loop: true
+                    });
+
+                    this.el.appendChild(box);
+
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-entity id="enviro" position="0 -.001 0" environment="
+            preset: checkerboard; 
+            groundYScale: 100; 
+            fog: 0.04; 
+            lighting: point;
+            dressingAmount: 100; 
+            groundColor2: #008eb7; 
+            groundColor: #b34093; 
+            groundTexture: checkerboard;
+            ground: hills;
+            active: true; seed: 10; 
+            skyType: gradient; 
+            skyColor: #0084ff; 
+            horizonColor: #008eb7;
+            playArea: 1.2;
+            flatShading: false; 
+            dressing: arches;
+            dressingColor: #4f30f7; 
+            dressingScale: 0.2; 
+            dressingAmount: 40;
+            dressingOnPlayArea: 1; 
+            gridColor: #239893">
+        </a-entity>
+
+
+
+
+        <!-- Attach components to an entity tag by adding the name -->
+        <a-assets>
+            <a-asset-item id="twist-obj" src="models/clocktower_obj.obj"></a-asset-item>
+            <a-asset-item id="ahead" src="models/head.obj"></a-asset-item>
+        </a-assets>
+
+
+        <!-- Define the Curve -->
+        <a-curve id="track1">
+            <a-curve-point position="-16 19 -33"></a-curve-point>
+            <a-curve-point position="7 24 -57"></a-curve-point>
+            <a-curve-point position="53 7 5"></a-curve-point>
+            <a-curve-point position="22 9 17"></a-curve-point>
+            <a-curve-point position="29 6 42"></a-curve-point>
+            <a-curve-point position="27 33.45 60"></a-curve-point>
+            <a-curve-point position="-33 6.0 27"></a-curve-point>
+            <a-curve-point position="-16 19 -33"></a-curve-point>
+        </a-curve>
+        <!-- Draw the Curve -->
+        <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+        <!-- 
+        <a-entity hello-world="amount: 50; randScaleMax: 6;" position="0 45 61.52208652198784">
+        </a-entity> -->
+
+        <!-- Clone a Box along the Curve -->
+        <!-- <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity> -->
+
+
+        <a-obj-model src="#twist-obj" material="color:#ff7300; metalness: 1;" position="0 1.017472682325515 0" scale="2.4952605306977556 2.4952605306977556 2.4952605306977556"
+            obj-model=""></a-obj-model>
+
+        <a-entity hello-world="amount: 15;randScaleMax: 5;" position=" 45 0 15"></a-entity>
+        <a-entity probe="amount: 15;randScaleMax: 5;" position="27 0 -41"></a-entity>
+        <a-entity hello-world="amount: 15;randScaleMax: 5;" position="-8 0 -43"></a-entity>
+        <a-entity probe="amount: 15;randScaleMax: 5;" position="27 0 38"></a-entity>
+        <a-entity hello-world="amount: 15;randScaleMax: 5;" position="53 0 12"></a-entity>
+        <a-entity probe="amount: 15;randScaleMax: 5;" position="-27 0 0"></a-entity>
+        <a-entity hello-world="amount: 15;randScaleMax: 5;" position="24 0 59"></a-entity>
+
+        <a-entity>
+            <a-entity id="sun" obj-model="obj: #ahead;" material="color: #ff0000; metalness: 1;" scale="5 5 5" rotation="0 0 180"
+                position="0 20 -25" sound="src:./plume2.mp3;autoplay:true;volume: 10; loop:true;">
+            </a-entity>
+            <a-animation direction="alternate" attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite"></a-animation>
+        </a-entity>
+
+        <a-entity>
+            <a-entity id="sun" obj-model="obj: #ahead;" material="color: #ff0000; metalness: 1;" scale="5 5 5" rotation="0 0 180"
+                position="0 35 -25" sound="src:./plume2.mp3;autoplay:true;volume: 5; loop:true;">
+            </a-entity>
+            <a-animation direction="alternate" attribute="rotation" to="0 -360 0" dur="30000" repeat="indefinite"></a-animation>
+        </a-entity>
+
+        <a-entity>
+            <a-entity id="sun" obj-model="obj: #ahead;" material="color: #ff0000; metalness: 1;" scale="5 5 5" rotation="0 0 180"
+                position="0 50 -25" sound="src:./plume2.mp3;autoplay:true;volume: 5; loop:true;">
+            </a-entity>
+            <a-animation direction="alternate" attribute="rotation" to="0 360 0" dur="10000" repeat="indefinite"></a-animation>
+        </a-entity>
+
+        <a-entity light="intensity: 1.29; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10; type: point"></a-entity>
+        <a-entity alongpath="curve: #track1; loop: true; dur: 120000">
+            <a-camera></a-camera>
+
+
+        </a-entity>
+
+
+
+    </a-scene>
+</body>
+<script>
+</script>
+
+</html>

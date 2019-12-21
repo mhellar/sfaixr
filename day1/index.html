@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Introduction to Aframe</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <figure>
+                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
+                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
+                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
+                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
+                </figure>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
+                <p>Grab the code here: <a href="https://bit.ly/2voWGnG">https://bit.ly/2voWGnG</a></p>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <ul>
+                    <h3>Topics for Today:</h3>
+                    <li class="fragment">Getting set up</li>
+                    <li class="fragment">Setting up the Go</li>
+                    <li class="fragment">Some example scenes</li>
+                    <li class="fragment">Building your first scene</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Some test scenes</li>
+                    
+                    <li><a href="http://mhellar.com/af/6">http://mhellar.com/af/6</a></li>
+                    <li><a href="http://mhellar.com/af/5">http://mhellar.com/af/5</a></li>
+                    <li><a href="https://aframe.io">https://aframe.io</a></li>
+                </ul>
+            </section>
+
+            
+            <section>
+                <ul>
+                    <li>Have Github desktop installed</li>
+                    <li>Have NodeJS installed</li>
+                    <li>Install live-server 'sudo npm install live-server -g'</li>
+                    <li><a href="https://pages.github.com/">Setup Gitbup pages</a></li>
+                    <li>Create a new repo for storing your scenes and make a branch called gh-pages</li>
+                    <li>Open it in Github desktop</li>
+                </ul>
+            </section>
+            <section>
+                    <ul>
+                        <li>Fork this repo</li>
+                        <li><a href="https://github.com/mhellar/wbxrclass">repo</a></li>
+                    </ul>
+                </section>
+            <section>
+                    <ul>
+                    <li>Open basic.html in a text editor</li>
+                    <li>also cd into it from the terminal and type 'live-server'</li>
+                    <li>Lets look at the code really quick</li>
+                    </ul>
+            </section>
+
+            <section>
+                    <p>Add a primitive cube in between the scene tags</p>
+                    <pre><code data-trim>
+                    <a-box color="red"></a-box>
+                    </code></pre>
+            </section>
+
+            <section>
+                <p>A-Frame uses a right-handed coordinate system. With the default camera direction: positive X-axis extends right, positive Y-axis extends up, and the positive Z-axis extends out of the screen towards us:</p>
+                <img src="img/rh.jpg">
+            </section>
+
+            <section>
+                    <ul>
+                        <li>The default camera is at 0 0 0 the same as our box</li>
+                        <li>Change the position attribute of the box so it is in front of the camera</li>
+                        <li>Units are in meters</li>
+                    </ul>
+                    <pre><code data-trim>
+                    <a-entity id="box" geometry="primitive: box" material="color: red" position="0 2 -5"></a-entity>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                        <li>We just changed the <a href="https://aframe.io/docs/0.8.0/components/position.html">position</a> attribute</li>
+                        <li>Also try <a href="https://aframe.io/docs/0.8.0/components/rotation.html">rotation</a></li>
+                        <li>And <a href="https://aframe.io/docs/0.8.0/components/scale.html">scale</a></li>
+                    </ul>
+                    <pre><code data-trim>
+                    <a-entity id="box" geometry="primitive: box" material="color: red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-entity>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>We we can add a ground plane to give us some perspective</li>
+                    </ul>
+                    <pre><code data-trim>
+                    <a-plane position="0 0 -4" scale="10 10 0.00001" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>Adding an image texture to the box is easy with the src attribute</li>
+                    </ul>
+                    <pre><code data-trim>
+                    <a-box src="assets/img/gypsum.jpg" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>Aframe has an asset manager system</li>
+                    <li>It's better to use this, within the a-scene tags add a-asset open and closing tags</li>
+                    <li>Within the a-assets tags load an image and give it an id</li>
+                    <li>Set the src attribute of the object you want to texture to the id of the image</li>
+                    </ul>
+                    <pre><code data-trim>
+<a-scene>
+        <a-assets>
+            <img id="boxTexture" src="assets/img/gypsum.jpg">
+        </a-assets>
+        <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+</a-scene>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>To make things more interesting I made a template with teleport controls</li>
+                    <li>Open basic2.html in a text editor</li>
+                    <li>It should be in the browser as something like http://localhost:8080/basic2.html</li>
+                    <li>This uses <a href="https://github.com/fernandojsg/aframe-teleport-controls">teleport controls</a></li>
+                    </ul>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>Note on the ground plane and applied texture</li>
+                    <li>The repeat attribute lets me set the density of the tiling</li>
+                    </ul>
+                    <pre><code data-trim>
+                    <a-plane src="#gndTexture" repeat="30 30" position="0 0 -4" scale="30 30 0.00001" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>Let's add an animation</li>
+                    <li>Place the a-animation tag inside the a-box tags like so</li>
+                    <li><a href="https://aframe.io/docs/0.8.0/core/animations.html">animation reference</a></li>
+                    
+                    </ul>
+                    <pre><code data-trim>
+    <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2">
+        <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000" repeat="indefinite">
+        </a-animation>
+    </a-box>
+                    </code></pre>
+            </section>
+
+            <section>
+                    <ul>
+                    <li>Building out an environment</li>
+                    <li>Add the script tag in the in between the head tags</li>
+                    <li>add the a-entity environment in the between the a-scene tags</li>
+                    <li><a href="https://github.com/feiss/aframe-environment-component">environments reference</a></li>
+                    <li>Let's tweak the environment out</li>
+                    </ul>
+                    <pre><code data-trim>
+                    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+                    <a-entity environment="preset: tron"></a-entity>
+                    </code></pre>
+            </section>
+
+            <!-- <section>
+                    <ul>
+                    <li>Loading a 3d model</li>
+                    <li>Out of the box A-frame support to 3d model file formats obj and gltf</li>
+                    <li>Obj is the classic format</li>
+                    <li><a href="https://aframe.io/docs/0.8.0/primitives/a-obj-model.html">Obj Import</a></li>
+                    <li><a href="https://aframe.io/docs/0.8.0/primitives/a-obj-model.html">Obj Import</a></li>
+                    <li><a href="https://github.com/feiss/aframe-environment-component">environments reference</a></li>
+                    </ul>
+                    <pre><code data-trim>
+                    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+                    <a-entity environment="preset: tron"></a-entity>
+                    </code></pre>
+            </section> -->
+
+
+            <section>
+                    <ul>
+                    <li>Adding a skymap</li>
+                    <li>add the img in the a-assets section</li>
+                    <li>add the a-sky tag in the scene outside of the a-assets section</li>
+                    <li>You need an equirectangular image for a sky</li>
+                    <li><a href="https://www.flickr.com/search/?l=commderiv&q=equirectangular">Here are some</a></li>
+                    <li><a href="http://photopin.com/free-photos/equirectangular">Here are some more</a></li>
+                    </ul>
+                    <pre><code data-trim>
+<a-scene>
+        <a-assets>
+            <img id="sky" src="assets/img/env.jpg">
+        </a-assets>
+            <a-sky src="#sky"></a-sky>
+</a-scene>
+                                                </code></pre>
+            </section>
+            <section>
+                    <li><a href="https://aframe.io/docs/0.8.0/introduction/">A-frame reference</a></li>
+                </section>
+
+            <section>
+                    <li><a href="https://aframe.io/docs/0.8.0/introduction/visual-inspector-and-dev-tools.html">Lets have a look at the visual inspector</a></li>
+                </section>
+
+            <section>
+                <p>Homework: Make a scene, put on github, share in discord</p>
+            </section>
+
+
+            <section>
+                    <a href="https://medium.com/@cwervo/turning-a-screenshot-into-a-facebook-360-image-6e37919f6525">Take a screenshot of your VR scene and post as a Facebook 360 image</a>
+            </section>
+           
+        </div>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                condition: function() {
+                    return !!document.querySelector('pre code');
+                },
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+</body>
+
+</html>

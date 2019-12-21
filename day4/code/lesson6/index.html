@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <script src="../js/aframe.min.js"></script>
+    <script src="../js/aframe-animation-component.min.js"></script>
+
+    <script>
+        // register your component here with a name
+        AFRAME.registerComponent('hello-world', {
+            schema: {
+                amount: {
+                    type: 'number',
+                    default: 10
+                },
+                color: {
+                    type: 'color',
+                    default: 'red'
+                },
+                duration: {
+                    type: 'number',
+                    default: 10000
+                },
+            },
+
+            init: function () {
+                for (let i = 1; i < this.data.amount; i++) {
+                    var knot = document.createElement('a-torus-knot');
+                    knot.setAttribute('color', this.data.color);
+                    knot.setAttribute('position', 2 + ' ' + i * 2 + ' ' + -2);
+                    knot.setAttribute('scale', '1 1 1');
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'rotation');
+                    anim.setAttribute('dur', this.data.duration);
+                    anim.setAttribute('to', i * 10 + ' ' + i * 10 + ' ' + i * 10);
+                    anim.setAttribute('repeat', 'indefinite');
+                    knot.appendChild(anim)
+
+                    this.el.appendChild(knot);
+
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- Attach components to an entity tag by adding the name -->
+        <a-entity hello-world="duration: 5000; amount: 100; color: orange" position="-2 2 0"></a-entity>
+        <a-entity hello-world="duration: 10000; amount: 250; color: purple" position="0 2 0"></a-entity>
+        </a-entity>
+        <a-entity hello-world="duration: 20000; amount: 500; color: teal" position="2 2 0"></a-entity>
+        </a-entity>
+
+
+        <a-plane rotation="-90 0 0" color="red" width="50" height="50"></a-plane>
+
+    </a-scene>
+</body>
+<script>
+</script>
+
+</html>
