@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Introduction to Aframe</title>
+    <title>Introduction to XR: Week
+        1</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,10 +31,14 @@
         <div class="slides">
             <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
                 <figure>
-                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
-                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
-                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
-                    <h2 class="intro">Introduction to Aframe</h2 class="intro">
+                    <h2 class="intro">Introduction to XR: Week
+                        1</h2 class="intro">
+                    <h2 class="intro">Introduction to XR: Week
+                        1</h2 class="intro">
+                    <h2 class="intro">Introduction to XR: Week
+                        1</h2 class="intro">
+                    <h2 class="intro">Introduction to XR: Week
+                        1</h2 class="intro">
                 </figure>
             </section>
             <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
@@ -42,11 +47,152 @@
             <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
                 <ul>
                     <h3>Topics for Today:</h3>
-                    <li class="fragment">Getting set up</li>
-                    <li class="fragment">Setting up the Go</li>
-                    <li class="fragment">Some example scenes</li>
-                    <li class="fragment">Building your first scene</li>
+                    <li class="fragment">Introductions and Course Overview</li>
+                    <li class="fragment">What is Mixed Reality(XR)</li>
+                    <li class="fragment">History</li>
+                    <li class="fragment">Some Examples</li>
+                    <li class="fragment">Getting Set up</li>
+                    <li class="fragment">Creating your first scene</li>
                 </ul>
+            </section>
+            <section>
+                <p>
+                    Web VR brings virtual reality to the web, making it easier for anyone to create, enjoy, and share VR experiences. With Web VR, you can open up a browser and get into VR just by clicking a link. 
+                </p>
+            </section>
+            <section>
+                <p>
+                    There have been a couple of specifications. Let's take a look.
+                </p>
+            </section>
+            <section>
+                <p>WebVR(2014-Present)</p>
+                <img src="img/webvr.png" height="600">
+                <p>(Last draft update 12/Dec 2017)</p>
+            </section>
+            <section>
+            <ol>
+                <li>Request a list of the available VR devices.</li>
+                <li>Checks to see if the desired device supports the presentation modes the application needs.</li>
+                <li>If so, application advertises VR functionality to the user.</li>
+                <li>User performs an action that indicates they want to enter VR mode.</li>
+                <li>Begin a render loop that produces graphical frames to be displayed on the VR device.</li>
+                <li>Request a VR session to present VR content with.</li>
+                <li>Continue producing frames until the user indicates that they wish to exit VR mode.</li>
+                <li>End the VR session.</li>
+                </ol>
+            </section>
+            <section>
+                <iframe allowvr="yes" src="https://threejs.org/examples/?q=xr#webxr_vr_cubes" height="720" width="1280"></iframe>
+            </section>
+            <section>
+                <iframe allowvr="yes" src="https://mhellar.com/af/5/" height="720" width="1280"></iframe>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
+                <img src="img/pipeline.png">
+            </section>
+            <section>
+                <p>What is WebXR?</p>
+            </section>
+            <section>
+                WebXR is an API that allows developers to create XR experiences; a catch-all term that spans AR, VR and newly-developed immersive technologies. The WebXR device API is for accessing virtual reality (VR) and augmented reality (AR) devices, including sensors and head-mounted displays on the Web. WebXR supercedes the the WebVR specification and covers VR and AR technologies. XR stands for Mixed Reality. 
+            </section>
+
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
+                <img src="img/xr.png">
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
+                <img src="img/arjs.png">
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
+                <img src="img/webxr.gif">
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <a href="https://immersive-web.github.io/webxr/">WebXR Draft</a>
+            </section>
+            <section>
+                WebVR and WebXR project are built using web technologies...
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <p>Platforms and Building Blocks</p>
+            </section>
+            <section>
+                    <h1>WebGL</h1><br>
+                    <p>WebGL (Web Graphics Library) is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. WebGL became a standard in modern bowsers in 2011</p>
+            </section>
+            <section>
+                    <a href="http://madebyevan.com/webgl-water">WebGL water example</a>
+            </section>
+            <section>
+                    <p>WebGL is great, but rather involved to program so we have helper libraries, such as ...</p>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <img src="img/three.png" height="600"><br>
+                <a href="https://threejs.org/examples/">Three.js</a>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <img src="img/babylon.jpg" height="500"><br>
+                <a href="https://www.babylonjs.com/">BabylonJS</a><br>
+                <a href="https://doc.babylonjs.com/how_to/webvr_helper">BabylonJS VR Helper</a>
+            </section>
+            <section>
+                    <p>Three.js and Babylon started as 3d in the browser libraries and added VR features later. But we also have a VR first library built on top of Three.js...</p>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <img src="img/aframe.png" height="500"><br>
+                <a href="https://aframe.io/">Aframe</a>
+            </section>
+            <section>
+                    <iframe allowvr="yes" src="https://altspacevr.github.io/aframe/examples/boilerplate/hello-world/" height="720" width="1280"></iframe>
+                </section>
+            <section>
+                <img src="img/aframebasic.png">
+            </section>
+            <section>
+                <a href="https://altspacevr.github.io/aframe/examples/">Some Examples</a>
+            </section>
+            <section>
+                    <p>Visual Inspector</p>
+                    <img src="img/aframeinspector.png">
+                    <a href="https://github.com/aframevr/aframe-inspector">https://github.com/aframevr/aframe-inspector</a>
+                </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <img src="img/sumerian.png" height="500"><br>
+                <a href="https://aws.amazon.com/sumerian/">Amazon Sumerian</a>
+            </section>
+            <section>
+                <p>The OBJ file format is a simple data-format that represents 3D geometry alone — namely, the position of each vertex, the UV position of each texture coordinate vertex, vertex normals, and the faces that make each polygon defined as a list of vertices, and texture vertices.</p>
+            </section>
+            <section>
+                    <img src="img/obj.png">
+            </section>
+            <section>
+                    <p>FBX (Filmbox) is a proprietary file format (.fbx) developed by Kaydara and owned by Autodesk since 2006. It is used to provide interoperability between digital content creation applications.</p>
+            </section>
+            <section>
+                <img src="img/fbx.jpg">
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <img src="img/gltf.png" height="500"><br>
+                <a href=" https://www.khronos.org/gltf/">GL Transmission Format(GLTF)</a>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <img src="img/gltf_struct.png" height="300"><br>
+                <a href=" https://www.khronos.org/gltf/">GL Transmission Format(GLTF)</a>
+            </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
+                <p>GLTF</p>
+                <ul>
+                <li class="fragment">glTF (GL Transmission Format) is a file format for 3D scenes and models using the JSON standard.</li> 
+                <li class="fragment">It is described by its creators as the "JPEG of 3D."</li> 
+                <li class="fragment">It is an API-neutral runtime asset delivery format developed by the Khronos Group 3D Formats Working Group.</li>  
+                <li class="fragment">The intention is that glTF be an efficient, interoperable asset delivery format that compresses the size of 3D scenes and minimizes runtime processing by applications using WebGL and other APIs.</li> 
+                <li class="fragment">glTF also defines a common publishing format for 3D content tools and services.</li> 
+            </ul>
+            </section>
+            <section>
+                <img src="img/si.png" height="600">
+                <a href="https://3d.si.edu/">https://3d.si.edu/</a>
             </section>
             <section>
                 <ul>
@@ -246,11 +392,6 @@
                 <p>Homework: Make a scene, put on github, share in discord</p>
             </section>
 
-
-            <section>
-                    <a href="https://medium.com/@cwervo/turning-a-screenshot-into-a-facebook-360-image-6e37919f6525">Take a screenshot of your VR scene and post as a Facebook 360 image</a>
-            </section>
-           
         </div>
         </div>
     </div>
