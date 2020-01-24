@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-environment-component.min.js"></script>
+    <script src="js/aframe-teleport-controls.min.js"></script>
+    <script src="js/aframe-extras.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-mixin id="teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;"></a-mixin>
+        </a-assets>
+        <a-entity id="room">
+            <a-box position="4.277478058905652 3.633 -2" scale="1 6 12" color="blue" material="" geometry=""></a-box>
+            <a-box position="-3.8863551838399077 3.633 -2" scale="1 6 12" color="blue" material="" geometry=""></a-box>
+        </a-entity>
+
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E">
+            <!-- a-sphere postioned at "0 1 1" parented from the first sphere -->
+            <a-sphere position="0 1 1" radius="1.25" color="#EF2D5E"></a-sphere>
+        </a-sphere>
+
+        <!-- a-sphere postioned at "0 1 1" with no parent -->
+        <!-- <a-sphere position="0 1 1" radius="1.25" color="blue"></a-sphere> -->
+        <a-camera>
+
+        </a-camera>
+        <a-entity id="cameraRig" position="0 0.1 0">
+            <a-entity camera wasd-controls look-controls></a-entity>
+            <a-entity id="rightHand " mixin="teleport" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
