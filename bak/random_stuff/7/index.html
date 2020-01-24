@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>VR Demo</title>
+<script type="text/javascript" src="app.js"></script></head>
+
+<body>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
+    <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script>
+</head>
+
+    <script>
+        // register your component here with a name
+        AFRAME.registerComponent('hello-world', {
+            schema: {
+                amount: {
+                    type: 'number',
+                    default: 10
+                },
+                color: {
+                    type: 'color',
+                    default: 'red'
+                },
+                duration: {
+                    type: 'number',
+                    default: 10000
+                },
+                randScaleMax: {
+                    type: 'number',
+                    default: 3
+                },
+            },
+            //custom function
+            getRandomInt: function (min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+            },
+            getRandomColor: function () {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            },
+            init: function () {
+                for (let i = 1; i < this.data.amount; i++) {
+                    var box = document.createElement('a-box');
+                    box.setAttribute('color', this.getRandomColor());
+                    // box.setAttribute('position', '0 0 0');
+                    box.setAttribute('scale', this.getRandomInt(1, this.data.randScaleMax) + ' ' + this.getRandomInt(1, this.data.randScaleMax) + ' ' + this.getRandomInt(1, this.data.randScaleMax));
+                    box.setAttribute('rotation', i*2 + ' ' + i*2 + ' ' + i*2);
+                    box.setAttribute('radius', i);
+                    box.setAttribute('metalness', 1);
+                    // box.setAttribute('animation', {property: 'rotation', to: 0 360 0, loop: 'true', dur: 10000});
+                    // box.setAttribute('animation__rotate', {
+                    //     property: 'rotation',
+                    //     to: i + ' ' + i + ' ' + i),
+                    //     loop: 'true',
+                    //     dur: 10000
+                    // });
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'rotation');
+                    anim.setAttribute('dur', '15000');
+                    anim.setAttribute('to', i + ' ' + i + ' ' + i);
+                    anim.setAttribute('repeat', 'indefinite');
+                    box.appendChild(anim)
+                    this.el.appendChild(box);
+                }
+            }
+        });
+    </script>
+    
+
+    <a-scene id="scene" vr-mode-ui="enabled: true" physics="gravity:-9.6">
+        
+        <a-assets>
+            <!-- <a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin> -->
+            <a-mixin id="mytouch" physics-collider phase-shift collision-filter="collisionForces: false" static-body="shape: sphere; sphereRadius: 0.02" super-hands="colliderEvent: collisions; colliderEventProperty: els; colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
+            <a-asset-item id="ahead" src="./head.obj"></a-asset-item>
+
+            <a-mixin id="light"
+            geometry="primitive: sphere; radius: 1.5"
+            material="color: #FFF; shader: flat"
+            light="color: #DDDDFF; distance: 120; intensity: 2; type: point"></a-mixin>
+        </a-assets>
+
+        <a-entity id="enviro" position="0 -.001 0" environment="
+preset: tron; 
+groundYScale: 100; 
+fog: 0.4; 
+dressingAmount: 50; 
+groundColor2: #008eb7; 
+groundColor: #b34093; 
+groundTexture: checkerboard;
+ground: hills;
+active: true; seed: 17; 
+skyType: gradient; 
+skyColor: #87faf4; 
+horizonColor: #b50200;
+flatShading: true; 
+dressing: apparatus;
+dressingColor: #3cf7ed; 
+dressingScale: 0.2; 
+dressingAmount: 200;
+dressingOnPlayArea: 1; 
+gridColor: #239893">
+</a-entity>
+<!-- ground collider keeps objets from falling -->
+<a-box static-body width=100 height=0.001 depth=100 visible="false"></a-box>
+
+        <a-curve id="track1">
+            <a-curve-point position="-16 19 -33"></a-curve-point>
+            <a-curve-point position="7 24 -57"></a-curve-point>
+            <a-curve-point position="53 7 5"></a-curve-point>
+            <a-curve-point position="22 9 17"></a-curve-point>
+            <a-curve-point position="29 6 42"></a-curve-point>
+            <a-curve-point position="27 33.45 60"></a-curve-point>
+            <a-curve-point position="-33 6.0 27"></a-curve-point>
+            <a-curve-point position="-16 19 -33"></a-curve-point>
+        </a-curve>
+        <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+
+        <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>
+
+        <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
+                <a-entity mixin="light" position="30 0 0"></a-entity>
+              </a-entity>
+        
+              <a-entity animation="property: rotation; to: 360 0 0; dur: 4000; easing: linear; loop: true">
+                <a-entity mixin="light" position="0 0 40"></a-entity>
+              </a-entity>
+
+        <a-entity>
+            <a-entity id="sun" scale="5 5 5" rotation="0 0 180" position="0 20 -25" sound="src:./plume2.mp3;autoplay:true; loop:true;">
+
+                <a-entity hello-world="amount:35;randScaleMax:4"></a-entity>
+            </a-entity>
+
+            
+            <a-animation direction="alternate" attribute="rotation" to="0 360 0" dur="20000" repeat="indefinite"></a-animation>
+        </a-entity>
+
+        <!-- CAMERA RIG FOR TELEPORT-CONTROLS AND SUPER-HANDS -->
+        <a-entity id="cameraRig" alongpath="curve: #track1; loop: true; dur: 120000">
+            <a-entity id="head" progressive-controls="gazeMixin: mycursor; touchMixin: mytouch; override: true; objects: .obj, .button; maxLevel: point;">
+                <a-entity teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;" shadow="cast:true" haptics="events: triggerdown; dur: 50; force: 0.5" class="left-controller"></a-entity>
+                <a-entity teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;" shadow="cast:true" haptics="events: triggerdown; dur: 50; force: 0.5" class="right-controller"></a-entity>
+            </a-entity>
+        </a-entity>
+
+
+    </a-scene>
+
+</body>
+
+</html>
