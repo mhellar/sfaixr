@@ -1,7 +1,7 @@
 <html>
 <head>
     <!-- import aframe library -->
-    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     
     <!-- import teleport library -->
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
@@ -46,6 +46,7 @@
             <img id="boxTexture" src="assets/img/gypsum.jpg">
             <img id="gndTexture" src="assets/img/grid.jpg">
             <img id="sky" src="assets/img/env.jpg">
+
             <audio id="metal" preload="auto" crossorigin="anonymous" src="assets/snd/soundin.wav"></audio>
         </a-assets>
 
@@ -54,12 +55,12 @@
     
         <!-- add items to scene -->
 
-        <a-sphere position="0 2 -.5" radius="2" color="#EF2D5E" material="color:#eee; sphericalEnvMap:#sky;metalness:1;roughness:0;side:double;"
+        <a-sphere position="0 5 -.5" radius="5" color="#EF2D5E" material="color:#eee; sphericalEnvMap:#sky;metalness:1;roughness:0;side:double;"
 
         animation__rotation="property: rotation; dir: alternate; dur: 10000;
                                   easing: easeInSine; loop: true; to: 0 360 0"
         animation__position="property: position; dir: alternate; dur: 10000;
-                                  easing: easeInSine; loop: true; from: 0 2 0; to: 0 2 -15"
+                                  easing: easeInSine; loop: true; from: 0 5 0; to: 0 5 -40"
         animation__segmentw="property: segments-width; dir: alternate; dur: 1000;
                                   easing: easeInSine; loop: true; from: 2; to: 36"
         animation__segmenth="property: segments-height; dir: alternate; dur: 1000;
