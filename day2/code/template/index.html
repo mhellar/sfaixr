@@ -6,6 +6,9 @@
 </head>
 
 <body>
+    <!-- click to start text -->
+    <div id="click">Click to start experience</div>
+    <!-- start a-frame scene -->
     <a-scene>
         <a-assets>
             <a-mixin id="teleport" teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 1000; "></a-mixin>
@@ -13,7 +16,7 @@
             <img id="gndTexture" src="assets/img/grid.jpg">
         </a-assets>
         <a-sky src="#sky"></a-sky>
-    
+
         <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2">
             <!-- <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000"
             repeat="indefinite"> -->
@@ -27,7 +30,7 @@
                 <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right" vive-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
                 <a-entity id="leftHand" mixin="teleport" laser-controls="hand: left" vive-controls="hand: left" oculus-go-controls="hand: left"></a-entity>
         </a-entity>
-        
+
     </a-scene>
 </body>
 </html>
