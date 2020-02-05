@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <script src="../js/aframe.min.js"></script>
+    <script src="../js/aframe-animation-component.min.js"></script>
+    <script src="../js/aframe-curve-component.min.js"></script>
+    <script src="../js/aframe-alongpath-component.min.js"></script>
+    <script src="../js/aframe-environment-component.min.js"></script>
+
+    <script>
+        // register your component here with a name
+        AFRAME.registerComponent('hello-world', {
+            schema: {
+                amount: {
+                    type: 'number',
+                    default: 10
+                },
+                color: {
+                    type: 'color',
+                    default: 'red'
+                },
+                duration: {
+                    type: 'number',
+                    default: 10000
+                },
+                randScaleMax: {
+                    type: 'number',
+                    default: 3
+                },
+            },
+            //custom function
+            getRandomInt: function (min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+            },
+
+            getRandomColor: function () {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            },
+
+            init: function () {
+                for (let i = 1; i < this.data.amount; i++) {
+                    var box = document.createElement('a-torus-knot');
+                    box.setAttribute('color', this.getRandomColor());
+                    box.setAttribute('position', '0 2 -5');
+                    box.setAttribute('scale', this.getRandomInt(1, this.data.randScaleMax) + ' ' + this.getRandomInt(
+                        1, this.data.randScaleMax) + ' ' + this.getRandomInt(1, this.data.randScaleMax));
+                    box.setAttribute('rotation', i + ' ' + i + ' ' + i);
+                    box.setAttribute('radius', .3 / i);
+                    box.setAttribute('metalness', 1);
+                    box.setAttribute('radius-tubular', 0.2 / i);
+                    box.setAttribute('transparent', 'true');
+                    box.setAttribute('opacity', 0.5);
+
+                    box.setAttribute('p', i);
+                    box.setAttribute('q', 3);
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'rotation');
+                    anim.setAttribute('dur', '120000');
+                    anim.setAttribute('to', i * 10 + ' ' + i * 10 + ' ' + i * 10);
+                    anim.setAttribute('repeat', 'indefinite');
+                    box.appendChild(anim)
+
+                    var anim = document.createElement('a-animation');
+                    anim.setAttribute('attribute', 'scale');
+                    anim.setAttribute('dur', '120000');
+                    anim.setAttribute('to', i * 2 + ' ' + i * 2 + ' ' + i * 2);
+                    anim.setAttribute('repeat', 'indefinite');
+                    box.appendChild(anim)
+
+                    this.el.appendChild(box);
+
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+        <a-entity id="enviro" position="0 -.001 0" environment="
+                preset: tron; 
+                groundYScale: 100; 
+                fog: 0.6; 
+                dressingAmount: 100; 
+                groundColor2: #008eb7; 
+                groundColor: #b34093; 
+                groundTexture: checkerboard;
+                ground: spikes;
+                active: true; seed: 17; 
+                skyType: gradient; 
+                skyColor: #87faf4; 
+                horizonColor: #b100200;
+                flatShading: true; 
+                dressing: arches;
+                dressingColor: #4f30f7; 
+                dressingScale: 0.2; 
+                dressingAmount: 40;
+                dressingOnPlayArea: 1; 
+                gridColor: #239893">
+        </a-entity>
+        <a-light type="ambient" color="#222" intensity="5" light="type:point;color:#fefcff;intensity:0.6699999999999992"></a-light>
+        <!-- Attach components to an entity tag by adding the name -->
+        <a-entity hello-world="amount:20;randScaleMax:4" position="0 22.35589385257807 61.52208652198784">
+        </a-entity>
+        <a-entity hello-world="amount: 5;randScaleMax: 100;" position="45 6 15"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="27 21 -41"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="-8 22 -43"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="-8 24 12"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="27 10 38"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="53 9 12"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="-27 13 0"></a-entity>
+        <a-entity hello-world="amount: 10;randScaleMax: 100;" position="24 33 59"></a-entity>
+
+        <!-- add a light -->
+        <a-light type="ambient" color="#222" intensity="5"></a-light>
+
+        <!-- Define the Curve -->
+        <a-curve id="track1">
+            <a-curve-point position="-16 19 -33"></a-curve-point>
+            <a-curve-point position="7 24 -57"></a-curve-point>
+            <a-curve-point position="53 7 5"></a-curve-point>
+            <a-curve-point position="22 9 17"></a-curve-point>
+            <a-curve-point position="29 6 42"></a-curve-point>
+            <a-curve-point position="27 33.45 60"></a-curve-point>
+            <a-curve-point position="-33 6.0 27"></a-curve-point>
+            <a-curve-point position="-16 19 -33"></a-curve-point>
+        </a-curve>
+        <!-- Draw the Curve -->
+        <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+
+        <!-- Clone a Box along the Curve -->
+        <!-- <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity> -->
+
+        <!-- Set the camera to follow the curve -->
+        <a-entity alongpath="curve: #track1; loop: true; dur: 120000">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <!-- <a-plane rotation="-90 0 0" color="red" width="1000" height="1000"></a-plane> -->
+
+    </a-scene>
+</body>
+<script>
+</script>
+
+</html>

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebVR Workshop: Day 4</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+                <figure>
+                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
+                </figure>
+            </section>
+            <section>
+                <ul>
+                    <li>a-entity tag</li>
+                    <li class="fragment">So far we've mainly been working with the built in aframe primitive like a-box,
+                        a-sphere etc..</li>
+                    <li class="fragment">Theres another way to add elements to the scene with a-entity</li>
+                    <li class="fragment">By itself, a-entity has no appearance, behavior, or functionality.</li>
+                    <li class="fragment">To extend a-entity you attach a component to it which gives it new atrributes</li>
+                    <li class="fragment">There are many avialable components which are built into aframe and externally</li>
+                    <li class="fragment">Lets look at the built in a-frame ones https://aframe.io/docs/0.8.0/components/background.html</li>
+                    <li class="fragment">Components are written in Javascript</li>
+                </ul>
+            </section>
+            <section>
+                Components of A-Frame’s entity-component framework are JavaScript modules that can be mixed, matched, and composed onto entities
+                to build appearance, behavior, and functionality. We can register component in JavaScript and and add it
+                to an a-entity tag. Components are configurable, reusable, and shareable. Most code in an A-Frame application
+                should live within components.
+            </section>
+
+            <section>
+                You use the AFRAME.registerComponent() function to register a component, do this before
+                <a-scene></a-scene> Have a look at comp.html
+            </section>
+
+            <section>
+                You can also define an AFRAME.registerComponent() in a seperate file
+                <a-scene></a-scene> Have a look at the contecnt of the template folder
+            </section>
+
+            <section>
+                <ul>
+                    <li>Default functions of a component</li>
+                    <li>Inside the template folder, look at the file mycomponent.js</li>
+                    <li>This is a boilerplate that show all the built in fucntions that a-frame gives us</li>
+                    <li>We will mainly use the init() which is called once when the component is first plugged into its entity.</li>
+                </ul>
+            </section>
+            <section>
+                We’ll go over examples on writing components. The examples will do mostly trivial things at first but will will build up
+                in compleity as we go.
+            </section>
+            <section>
+                Let's look at the code in lesson1
+            </section>
+            <section>
+                After the entity is attached and initialized, it will initialize our hello-world component. The wonderful thing about components
+                is that they are called only after the entity is ready.
+            </section>
+            <section>
+                <ul>
+                    <li>Defining Properties with the Schema</li>
+                    <li>The schema defines the properties of its component. As an analogy, if we think of a component as
+                        a function, then a component’s properties are like its function arguments.</li>
+                    <li>Have a look at lesson2 and try uncommenting line 33</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Defining Properties with the Schema</li>
+                    <li>The schema defines the properties of its component. As an analogy, if we think of a component as
+                        a function, then a component’s properties are like its function arguments.</li>
+                    <li>Have a look at lesson2 and try uncommenting line 33</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Lets look at the Component API reference to see the schema type available</li>
+                    <li><a href="https://aframe.io/docs/0.8.0/core/component.html">Aframe component API reference</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Have a look at lesson3</li>
+                    <li>This shows mutltiple schema properties and how to call them</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Add an element to the scene using document.createElement(),setAttribute() and .appendChild()</li>
+                    <li>Have a look at lesson4</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>In lesson5 we combine the last lesson with multiple schema propeties and entities</li>
+                    <li>Let's take a look</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>We can combine elements with appendChild()</li>
+                    <li>Let's take a look at Lesson 6</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>We can combine elements with appendChild()</li>
+                    <li>Let's take a look at Lesson 6</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Let's take a look at Lesson 7</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Writing a custom function</li>
+                    <li>Let's take a look at Lesson 8</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Writing a custom function part 2</li>
+                    <li>Let's take a look at Lesson 9</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>All core aframe and 3rd party components are written in this way</li>
+                    <li><a href="https://www.npmjs.com/search?q=aframe">Aframe 3rd party components</a></li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Lets look at the curve component</li>
+                    <li><a href="https://github.com/protyze/aframe-curve-component">Curve component</a></li>
+                    <li>Let's take a look at Lesson 10</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Lets look at the alongpath component</li>
+                    <li><a href="https://github.com/protyze/aframe-alongpath-component">Alongpath component</a></li>
+                    <li>Let's take a look at Lesson 11</li>
+                </ul>
+            </section>
+            <section>
+                <p>Homework read:
+                    <a href="https://aframe.io/docs/0.8.0/introduction/entity-component-system.html">entity-component system</a>
+                </p>
+            </section>
+        </div>
+    </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function () {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                condition: function () {
+                    return !!document.querySelector('pre code');
+                },
+                callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+</body>
+
+</html>

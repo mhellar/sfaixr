@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>universe</title>
+  <meta name="description" content="universe">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-anim-component/index.js"></script>
+  <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+
+
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
+      <a-asset-item id="probe" src="models/NewTieFighter.obj"></a-asset-item>
+      <!-- <a-mixin id="pos" anim1="amount: 50;randScaleMax: 1.5;" position=" 45 0 15"></a-mixin> -->
+    </a-assets>
+
+    <!-- Primitives. -->
+    <!-- <a-entity id="sun" obj-model="obj:models/probe.obj" material="color:#ff0000;metalness:1" scale="2 2 2"  position="0 6 0" rotation="0 0 180">
+      </a-entity> -->
+    <a-entity anim="amount: 50;randScaleMax: 1.5;" position=" 45 0 15"></a-entity>
+
+
+    <!-- <a-entity mixin="pos"></a-entity>
+    </a-entity> -->
+
+    <!-- Background sky. -->
+    <a-sky height="4092" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+    <a-light type="point" position="0 5 0"></a-light>
+    <a-ocean color="#92E2E2" width="250" depth="250" density="150" speed="2"></a-ocean>
+
+    <!-- Ground. -->
+    <!-- <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle> -->
+
+    <!--Tracked controls. -->
+    <!-- <a-entity hand-controls="hand: left"></a-entity>
+      <a-entity hand-controls="hand: right"></a-entity> -->
+  </a-scene>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <!-- <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script> -->
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 </head>
@@ -8,7 +8,7 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-mixin id="teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;"></a-mixin>
+            <a-mixin id="teleport" teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 1000; "></a-mixin>
             <img id="boxTexture" src="assets/img/gypsum.jpg">
             <img id="gndTexture" src="assets/img/grid.jpg">
         </a-assets>
@@ -24,7 +24,8 @@
 
         <a-entity id="cameraRig" position="0 0.1 0">
                 <a-entity camera wasd-controls look-controls></a-entity>
-                <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
+                <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right" vive-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
+                <a-entity id="leftHand" mixin="teleport" laser-controls="hand: left" vive-controls="hand: left" oculus-go-controls="hand: left"></a-entity>
         </a-entity>
         
     </a-scene>

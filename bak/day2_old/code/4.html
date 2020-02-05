@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<<<<<<< HEAD
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+
+            <!-- import the temple gltf model -->
+            <a-asset-item id="temple" src="assets/models/city_scene_vernazza/scene.gltf" position="0 -1 0"></a-asset-item>
+
+            <!-- import space invader models at textures -->
+            <a-asset-item id="si-obj" src="assets/models/si/space_invader.obj"></a-asset-item>
+            <a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl"></a-asset-item>
+
+            <a-asset-item id="si2-obj" src="assets/models/si/space_invader2.obj"></a-asset-item>
+            <a-asset-item id="si2-mtl" src="assets/models/si/space_invader2.mtl"></a-asset-item>
+
+            <a-asset-item id="si3-obj" src="assets/models/si/space_invader3.obj"></a-asset-item>
+            <a-asset-item id="si3-mtl" src="assets/models/si/space_invader3.mtl"></a-asset-item>
+
+        </a-assets>
+
+        <a-sky color="blue"></a-sky>
+        <!-- create default environment -->
+        <!-- <a-entity environment="preset: forest"></a-entity> -->
+
+        <!-- create temple model in scene -->
+        <a-entity gltf-model="#temple" position="-0.17411 -59.03322 -220.69498" scale="0.2 0.2 0.2" rotation="0.323 0 0"></a-entity>
+
+        <!-- create space invader models in the scene -->
+
+        <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 30 -10">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: #si2-obj; mtl: #si2-mtl" position="8 35 -15">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: #si3-obj; mtl: #si3-mtl" position="-7 30 -20">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+
+    </a-scene>
+=======
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="si-obj" src="assets/models/si/space_invader.obj"></a-asset-item>
+      <a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl"></a-asset-item>
+      <a-asset-item id="si-obj2" src="assets/models/si/space_invader2.obj"></a-asset-item>
+      <a-asset-item id="si-mtl2" src="assets/models/si/space_invader2.mtl"></a-asset-item>
+      <a-asset-item id="si-obj3" src="assets/models/si/space_invader3.obj"></a-asset-item>
+      <a-asset-item id="si-mtl3" src="assets/models/si/space_invader3.mtl"></a-asset-item>
+    </a-assets>
+    <a-entity environment="preset: tron"></a-entity>
+
+    <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-4 1 -5" scale=".25 .25 .25"
+      animation__rot="property: position; from:-4 4 -5; to: -4 1 -5; loop: true; dur: 3000; dir: alternate; easing: easeInSine">
+    </a-entity>
+
+    <a-entity obj-model="obj: #si-obj2; mtl: #si-mtl2" position="0 1 -5" scale=".25 .25 .25"
+      animation__rot="property: position; from:0 1 -5; to: 0 4 -5; loop: true; dur: 3000; dir: alternate; easing: easeInSine">
+    </a-entity>
+
+    <a-entity obj-model="obj: #si-obj3; mtl: #si-mtl" position="4 1 -5" scale=".25 .25 .25"
+      animation__rot="property: position; from:4 4 -5; to: 4 1 -5; loop: true; dur: 3000; dir: alternate; easing: easeInSine">
+    </a-entity>
+
+    <a-entity id="rightHand" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
+
+  </a-scene>
+>>>>>>> e32e0a8f04224d882732bfbf2d0a7815d58e1d3c
+</body>
+
+</html>

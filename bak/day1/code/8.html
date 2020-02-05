@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene background="color: #E31C1C">
+    <a-assets>
+      <img id="normal" src="img/normal.jpg">
+      <img id="spherical" src="img/miami.jpg">
+      <img id="map" src="img/map2.jpg">
+      <img id="field" src="img/field.jpg"></img>
+      <audio id="oak" src="snd/oak.mp3" preload="auto" crossorigin="anonymous"></audio>
+    </a-assets>
+
+    <a-sky src="#map"></a-sky>
+
+
+    <a-sphere position="-5 1 -5" scale="2 2 2" material="src: #spherical;">
+      <a-sound src="#oak" autoplay="true" loop="true" volume="1.5"></a-sound>
+    </a-sphere>
+    <a-sphere position="0 1 -5" scale="2 2 2" material="src: #field;"></a-sphere>
+    <a-sphere position="5 1 -5" scale="2 2 2" metalness=".5" material="normalMap: #normal; normalScale: 1;">
+    </a-sphere>
+
+  </a-scene>
+</body>
+
+</html>

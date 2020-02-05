@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene>
+        <!-- <a-light type="directional" position="-1 1 1" color="white"></a-light> -->
+        <!-- <a-light type="directional" position="1 1 1" color="white"></a-light> -->
+        <a-light type="directional" position="-1 1 1" color="red"></a-light>
+        <!-- <a-light type="ambient" color="white" intensity="0.5"></a-light> -->
+        <a-box width="1" transparent="true" opacity="1" metalness="1" height="1" depth="1" color="orange" position="0 1.5 -4" rotation="0 30 0">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-box>
+
+    </a-scene>
+</body>
+
+</html>
