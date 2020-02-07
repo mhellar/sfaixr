@@ -1,52 +1,39 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <script src="js/aframe.min.js"></script>
-    <script src="js/aframe-environment-component.min.js"></script>
-    <script src="js/aframe-teleport-controls.min.js"></script>
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
 </head>
 
 <body>
-    <a-scene>
-        <a-assets>
-            <a-mixin id="teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;"></a-mixin>
+  <a-scene>
+    <a-assets>
+      <!-- import models and materials here -->
+      <a-asset-item id="si-obj" src="assets/models/si/space_invader2.obj"></a-asset-item>
+      <a-asset-item id="si-mtl" src="assets/models/si/space_invader2.mtl"></a-asset-item>
 
-            <!-- import space invader models at textures -->
-            <a-asset-item id="si-obj" src="assets/models/si/space_invader.obj"></a-asset-item>
-            <a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl"></a-asset-item>
-
-            <a-asset-item id="si2-obj" src="assets/models/si/space_invader2.obj"></a-asset-item>
-            <a-asset-item id="si2-mtl" src="assets/models/si/space_invader2.mtl"></a-asset-item>
-
-            <a-asset-item id="si3-obj" src="assets/models/si/space_invader3.obj"></a-asset-item>
-            <a-asset-item id="si3-mtl" src="assets/models/si/space_invader3.mtl"></a-asset-item>
-
-        </a-assets>
+      <a-asset-item id="person-obj" src="assets/models/Low_People.obj"></a-asset-item>
+      <a-asset-item id="person-mtl" src="assets/models/Low_People.mtl"></a-asset-item>
 
 
-        <!-- create default environment -->
-        <a-entity environment="preset: default"></a-entity>
+    </a-assets>
 
-        <!-- create space invader models in the scene -->
+    <a-entity environment="preset: forest"></a-entity>
 
-        <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
-            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
-        </a-entity>
-        <a-entity obj-model="obj: #si2-obj; mtl: #si2-mtl" position="8 23 0">
-            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
-        </a-entity>
-        <a-entity obj-model="obj: #si3-obj; mtl: #si3-mtl" position="-7 18 13">
-            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
-        </a-entity>
+    <!-- place them in the scene with a-obj-model -->
+    <a-obj-model src="#si-obj" mtl="#si-mtl" position="-0.67037 1.50916 -15" scale="1 1 1">
+    </a-obj-model>
 
+    <a-obj-model src="#person-obj" mtl="#person-mtl" position="-22.92811 -1.25372 -38.4652"
+      scale="0.26847 0.26847 0.26847" rotation="0 -57.00000000000001 0" material="" obj-model="">
+    </a-obj-model>
 
-
-        <a-entity id="cameraRig" position="0 0.1 0">
-            <a-entity camera wasd-controls look-controls></a-entity>
-            <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
-        </a-entity>
-
-    </a-scene>
+  </a-scene>
 </body>
 
 </html>
