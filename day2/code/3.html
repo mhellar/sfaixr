@@ -1,45 +1,58 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Hello, WebVR! • A-Frame</title>
-  <meta name="description" content="Hello, WebVR! • A-Frame">
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-environment-component.min.js"></script>
+    <script src="js/aframe-teleport-controls.min.js"></script>
 </head>
 
 <body>
-  <a-scene>
-    <a-assets>
-      <a-asset-item id="si-obj" src="assets/models/si/space_invader.obj"></a-asset-item>
-      <a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl"></a-asset-item>
-      <a-asset-item id="si-obj2" src="assets/models/si/space_invader2.obj"></a-asset-item>
-      <a-asset-item id="si-mtl2" src="assets/models/si/space_invader2.mtl"></a-asset-item>
-      <a-asset-item id="si-obj3" src="assets/models/si/space_invader3.obj"></a-asset-item>
-      <a-asset-item id="si-mtl3" src="assets/models/si/space_invader3.mtl"></a-asset-item>
-    </a-assets>
-    <a-entity environment="preset: tron"></a-entity>
+    <a-scene>
+        <a-assets>
+            <a-mixin id="teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;"></a-mixin>
 
-    <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-4 1 -5" scale=".25 .25 .25"
-      animation__rot="property: position; from:-4 4 -5; to: -4 1 -5; loop: true; dur: 3000; dir: alternate; easing: easeInSine">
-    </a-entity>
+            <!-- import the temple gltf model -->
+            <a-asset-item id="temple" src="assets/models/temple_environment/scene.gltf" position="0 -1 0"></a-asset-item>
 
-    <a-entity obj-model="obj: #si-obj2; mtl: #si-mtl2" position="0 1 -5" scale=".25 .25 .25"
-      animation__rot="property: position; from:0 1 -5; to: 0 4 -5; loop: true; dur: 3000; dir: alternate; easing: easeInSine">
-    </a-entity>
+            <!-- import space invader models at textures -->
+            <a-asset-item id="si-obj" src="assets/models/si/space_invader.obj"></a-asset-item>
+            <a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl"></a-asset-item>
 
-    <a-entity obj-model="obj: #si-obj3; mtl: #si-mtl" position="4 1 -5" scale=".25 .25 .25"
-      animation__rot="property: position; from:4 4 -5; to: 4 1 -5; loop: true; dur: 3000; dir: alternate; easing: easeInSine">
-    </a-entity>
+            <a-asset-item id="si2-obj" src="assets/models/si/space_invader2.obj"></a-asset-item>
+            <a-asset-item id="si2-mtl" src="assets/models/si/space_invader2.mtl"></a-asset-item>
 
-<<<<<<< HEAD
-    <a-entity id="rightHand" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
-=======
->>>>>>> e32e0a8f04224d882732bfbf2d0a7815d58e1d3c
+            <a-asset-item id="si3-obj" src="assets/models/si/space_invader3.obj"></a-asset-item>
+            <a-asset-item id="si3-mtl" src="assets/models/si/space_invader3.mtl"></a-asset-item>
 
-  </a-scene>
+        </a-assets>
+
+
+        <!-- create default environment -->
+        <a-entity environment="preset: default"></a-entity>
+
+        <!-- create temple model in scene -->
+        <a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"></a-entity>
+
+        <!-- create space invader models in the scene -->
+
+        <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: #si2-obj; mtl: #si2-mtl" position="8 23 0">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: #si3-obj; mtl: #si3-mtl" position="-7 18 13">
+            <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+
+
+
+        <a-entity id="cameraRig" position="0 0.1 0">
+            <a-entity camera wasd-controls look-controls></a-entity>
+            <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
+        </a-entity>
+
+    </a-scene>
 </body>
 
 </html>

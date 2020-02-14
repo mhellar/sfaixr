@@ -1,45 +1,37 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
-  </head>
 
-  <body>
+<head>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-environment-component.min.js"></script>
+    <script src="js/aframe-teleport-controls.min.js"></script>
+    <script src="js/aframe-extras.js"></script>
+</head>
+
+<body>
     <a-scene>
-      <a-assets>
-        <a-mixin
-          id="teleport"
-          teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;"
-        ></a-mixin>
+        <a-assets>
+            <a-mixin id="teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;"></a-mixin>
 
-        <a-asset-item
-          id="stand"
-          src="assets/models/Stand_out/Stand.gltf"
-          position="0 -1 0"
-        ></a-asset-item>
-        <!-- <audio id="magic" src="assets/sound/magic.mp3" preload="auto"></audio> -->
-      </a-assets>
+            <a-asset-item id="stand" src="assets/models/Stand_out/Stand.gltf" position="0 -1 0"></a-asset-item>
+            <!-- <audio id="magic" src="assets/sound/magic.mp3" preload="auto"></audio> -->
+        </a-assets>
 
-      <!-- create default environment -->
-      <a-entity environment="preset: forest"></a-entity>
 
-      <!-- <a-sound src="assets/sound/magic.mp3" autoplay="true"></a-sound> -->
+        <!-- create default environment -->
+        <a-entity environment="preset: forest"></a-entity>
 
-      <a-entity
-        light="type: point; intensity: 1; distance: 50; decay: 2"
-        position="0 3 -2"
-      ></a-entity>
+        <a-sound src="assets/sound/magic.mp3" autoplay="true"></a-sound>
 
-      <a-gltf-model
-        src="#stand"
-        scale="1 1 1"
-        position="0 0 -3"
-        animation-mixer
-      >
-        <!-- try putting the sound here -->
-      </a-gltf-model>
+        <a-gltf-model src="#stand" scale="1 1 1" position="0 0 -3" animation-mixer>
+            <!-- try putting the sound here -->
+        </a-gltf-model>
+
+        <a-entity id="cameraRig" position="0 0.1 0">
+            <a-entity camera wasd-controls look-controls></a-entity>
+            <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right" oculus-go-controls="hand: right"></a-entity>
+        </a-entity>
+
     </a-scene>
-  </body>
+</body>
+
 </html>
