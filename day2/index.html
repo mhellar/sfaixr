@@ -64,17 +64,19 @@
                         <a href="https://www.mettle.com/360vr-master-series-free-360-downloads-page/">Some 360 videos to DL</a>
                     </li>
                 </ul>
-                <pre><code data-trim class="fragment">
-    <!-- goes in a-assets-->
-    <a-asset-item id="si-obj" src="assets/models/si/space_invader.obj">
-    </a-asset-item>
-    <a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl">
-    </a-asset-item>
-    
-    <!-- goes in a-scene -->
-    <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
-    </a-entity>
-                
+            </section>
+            <section>
+                Entities are container objects into which components can be attached. Entities are the base of all
+                objects in the scene. Without components, entities neither do nor render anything, similar to empty
+                div's
+            </section>
+            <section>
+                a-sphere under the hood, have a look at 1.html
+                <pre><code data-trim>
+                        <a-entity geometry="primitive: sphere; radius: 1.5"
+                        light="type: point; color: white; intensity: 2"
+                        material="color: white; shader: flat; src: glow.jpg"
+                        position="0 0 -5"></a-entity>
     </code></pre>
 
             </section>
@@ -98,7 +100,7 @@
 <!-- goes in a-scene -->
 <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
 </a-entity>
-            
+
 </code></pre>
 
             </section>
@@ -120,9 +122,9 @@
 </a-asset-item>
 
 <!-- goes in a-scene -->
-<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"> 
+<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03">
 </a-entity>
-            
+
                     </code></pre>
 
             </section>
@@ -144,9 +146,9 @@
 </a-asset-item>
 
 <!-- goes in a-scene -->
-<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"> 
+<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03">
 </a-entity>
-            
+
                     </code></pre>
 
             </section>
@@ -173,7 +175,7 @@
 <!-- goes in a-scene note animation-mixer-->
 <a-gltf-model src="#stand" scale="1 1 1" position="0 0 -3" animation-mixer>
 </a-gltf-model>
-            
+
                     </code></pre>
 
             </section>
@@ -259,7 +261,7 @@
      <!-- a-sphere postioned at "0 1 1" parented from the first sphere -->
       <a-sphere position="0 1 1" radius="1.25" color="#EF2D5E"></a-sphere>
 </a-sphere>
-                    
+
  <!-- a-sphere postioned at "0 1 1" with no parent -->
 <a-sphere position="0 1 1" radius="1.25" color="blue"></a-sphere>
                     </code></pre>
@@ -365,6 +367,113 @@
 <a-box position="1 1 -5 " rotation="0 70 30 " scale="0.9 0.9 0.9 " color="#E91E63 " event-set__enter="_event: mouseenter;
 _target: #bg; color: #E91E63" sound="src: assets/sound/sound27.mp3; on: mouseenter">
                         </code></pre>
+            </section>
+            <section>
+                <ul>
+                        <li>There are a couple ways to move around in a scene</li>
+                        <li class="fragment">Let's take a look at some of the methods</li>
+                        </li>
+                    </ul>
+            </section>
+            <section>
+                    <li>11.html uses thumbpad movement controls.</li>
+                    <li>This tends to make people sick though</li>
+                    <li><a href="https://github.com/donmccurdy/aframe-extras">This comes from the A-frame extras package</a></li>
+                </ul>
+            </section>
+
+            <section>
+                    <ul>
+                            <li>12.html uses teleport controls.</li>
+                            <li><a href="https://github.com/fernandojsg/aframe-teleport-controls">A-Frame teleport component</a></li>
+                            </li>
+                        </ul>
+            </section>
+
+            <section>
+                    <ul>
+                            <li>13.html uses a rollercoaster style movement system.</li>
+                            <li><a href="https://github.com/protyze/aframe-curve-component">A-Frame curve component</a></li>
+                            <li><a href="https://github.com/protyze/aframe-alongpath-component">A-Frame alongpath component</a></li>
+                            </li>
+                        </ul>
+            </section>
+
+            <section>
+                Components of A-Frame’s entity-component framework are JavaScript modules that can be mixed, matched,
+                and composed onto entities
+                to build appearance, behavior, and functionality. We can register component in JavaScript and and add it
+                to an a-entity tag. Components are configurable, reusable, and shareable. Most code in an A-Frame
+                application should live within components.
+            </section>
+
+
+            <section>
+                You use the AFRAME.registerComponent() function to register a component, do this before
+                <a-scene></a-scene> Have a look at comp.html
+            </section>
+
+            <section>
+                You can also define an AFRAME.registerComponent() in a seperate file
+                <a-scene></a-scene> Have a look at the content of the template folder
+            </section>
+
+            <section>
+                <ul>
+                    <li>Default functions of a component</li>
+                    <li>Inside the template folder, look at the file mycomponent.js</li>
+                    <li>This is a boilerplate that show all the built in functions that a-frame gives us</li>
+                    <li>We will mainly use the init() which is called once when the component is first plugged into its
+                        entity.</li>
+                </ul>
+            </section>
+            <section>
+                    <li><a href="https://aframe.io/docs/0.9.0/introduction/writing-a-component.html">writing a component reference</a>
+                    </li>
+
+            </section>
+            <section>
+                We’ll go over examples on writing components. The examples will do mostly trivial things at first but
+                will will build up
+                in compleity as we go.
+            </section>
+            <section>
+                Let's look at the code in 15.html
+            </section>
+            <section>
+                After the entity is attached and initialized, it will initialize our hello-world component. The
+                wonderful thing about components
+                is that they are called only after the entity is ready.
+            </section>
+            <section>
+                <ul>
+                    <li>Defining Properties with the Schema</li>
+                    <li>The schema defines the properties of its component. As an analogy, if we think of a component as
+                        a function, then a component’s properties are like its function arguments.</li>
+                    <li>Have a look at 16.html and try uncommenting line 33</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Lets look at the Component API reference to see the schema type available</li>
+                    <li><a href="https://aframe.io/docs/0.9.0/core/component.html">Aframe component API reference</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Have a look at 16.html</li>
+                    <li>This shows mutltiple schema properties and how to call them</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Add an element to the scene using document.createElement(),setAttribute() and .appendChild()
+                    </li>
+                    <li>Have a look at 17.html</li>
+                </ul>
             </section>
 
             <section>
