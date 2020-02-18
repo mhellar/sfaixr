@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>WebVR Workshop: Day 4</title>
+    <title>(XR) Week
+        4</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <!-- Code syntax highlighting -->
@@ -28,165 +30,324 @@
     <div class="reveal">
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
+                data-background-size="100px" data-background-transition="zoom">
                 <figure>
-                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
-                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
-                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
-                    <h2 class="intro">WebVR Workshop: Day 4</h2 class="intro">
+                    <h2 class="intro">(XR) Week
+                        4</h2 class="intro">
+                    <h2 class="intro">(XR) Week
+                        4</h2 class="intro">
+                    <h2 class="intro">(XR) Week
+                        4</h2 class="intro">
+                    <h2 class="intro">(XR) Week
+                        4</h2 class="intro">
                 </figure>
             </section>
-            <section>
-                <ul>
-                    <li>a-entity tag</li>
-                    <li class="fragment">So far we've mainly been working with the built in aframe primitive like a-box,
-                        a-sphere etc..</li>
-                    <li class="fragment">Theres another way to add elements to the scene with a-entity</li>
-                    <li class="fragment">By itself, a-entity has no appearance, behavior, or functionality.</li>
-                    <li class="fragment">To extend a-entity you attach a component to it which gives it new atrributes</li>
-                    <li class="fragment">There are many avialable components which are built into aframe and externally</li>
-                    <li class="fragment">Lets look at the built in a-frame ones https://aframe.io/docs/0.8.0/components/background.html</li>
-                    <li class="fragment">Components are written in Javascript</li>
-                </ul>
-            </section>
-            <section>
-                Components of A-Frame’s entity-component framework are JavaScript modules that can be mixed, matched, and composed onto entities
-                to build appearance, behavior, and functionality. We can register component in JavaScript and and add it
-                to an a-entity tag. Components are configurable, reusable, and shareable. Most code in an A-Frame application
-                should live within components.
-            </section>
-
-            <section>
-                You use the AFRAME.registerComponent() function to register a component, do this before
-                <a-scene></a-scene> Have a look at comp.html
-            </section>
-
-            <section>
-                You can also define an AFRAME.registerComponent() in a seperate file
-                <a-scene></a-scene> Have a look at the contecnt of the template folder
-            </section>
-
-            <section>
-                <ul>
-                    <li>Default functions of a component</li>
-                    <li>Inside the template folder, look at the file mycomponent.js</li>
-                    <li>This is a boilerplate that show all the built in fucntions that a-frame gives us</li>
-                    <li>We will mainly use the init() which is called once when the component is first plugged into its entity.</li>
-                </ul>
-            </section>
-            <section>
-                We’ll go over examples on writing components. The examples will do mostly trivial things at first but will will build up
-                in compleity as we go.
-            </section>
-            <section>
-                Let's look at the code in lesson1
-            </section>
-            <section>
-                After the entity is attached and initialized, it will initialize our hello-world component. The wonderful thing about components
-                is that they are called only after the entity is ready.
-            </section>
-            <section>
-                <ul>
-                    <li>Defining Properties with the Schema</li>
-                    <li>The schema defines the properties of its component. As an analogy, if we think of a component as
-                        a function, then a component’s properties are like its function arguments.</li>
-                    <li>Have a look at lesson2 and try uncommenting line 33</li>
-                </ul>
-            </section>
-            <section>
-                <ul>
-                    <li>Defining Properties with the Schema</li>
-                    <li>The schema defines the properties of its component. As an analogy, if we think of a component as
-                        a function, then a component’s properties are like its function arguments.</li>
-                    <li>Have a look at lesson2 and try uncommenting line 33</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Lets look at the Component API reference to see the schema type available</li>
-                    <li><a href="https://aframe.io/docs/0.8.0/core/component.html">Aframe component API reference</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Have a look at lesson3</li>
-                    <li>This shows mutltiple schema properties and how to call them</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Add an element to the scene using document.createElement(),setAttribute() and .appendChild()</li>
-                    <li>Have a look at lesson4</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>In lesson5 we combine the last lesson with multiple schema propeties and entities</li>
-                    <li>Let's take a look</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>We can combine elements with appendChild()</li>
-                    <li>Let's take a look at Lesson 6</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>We can combine elements with appendChild()</li>
-                    <li>Let's take a look at Lesson 6</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Let's take a look at Lesson 7</li>
-                </ul>
-            </section>
-            <section>
-                <ul>
-                    <li>Writing a custom function</li>
-                    <li>Let's take a look at Lesson 8</li>
-                </ul>
-            </section>
-            <section>
-                <ul>
-                    <li>Writing a custom function part 2</li>
-                    <li>Let's take a look at Lesson 9</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>All core aframe and 3rd party components are written in this way</li>
-                    <li><a href="https://www.npmjs.com/search?q=aframe">Aframe 3rd party components</a></li>
-                </ul>
-            </section>
-            <section>
-                <ul>
-                    <li>Lets look at the curve component</li>
-                    <li><a href="https://github.com/protyze/aframe-curve-component">Curve component</a></li>
-                    <li>Let's take a look at Lesson 10</li>
-                </ul>
-            </section>
-            <section>
-                <ul>
-                    <li>Lets look at the alongpath component</li>
-                    <li><a href="https://github.com/protyze/aframe-alongpath-component">Alongpath component</a></li>
-                    <li>Let's take a look at Lesson 11</li>
-                </ul>
-            </section>
-            <section>
-                <p>Homework read:
-                    <a href="https://aframe.io/docs/0.8.0/introduction/entity-component-system.html">entity-component system</a>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
+                data-background-size="90px" data-background-transition="zoom">
+                <p>Grab the code here:
+                    <a href="https://bit.ly/38mPlHE">https://bit.ly/38mPlHE</a>
                 </p>
             </section>
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
+                data-background-size="80px" data-background-transition="zoom">
+                <ul>
+                    <h3>Topics for Today:</h3>
+                    <li class="fragment">360 Video</li>
+                    <li class="fragment">Importing 3d Models</li>
+                    <li class="fragment">Adding Spatial Sound</li>
+                    <li class="fragment">Basic Animation</li>
+                    <li class="fragment">MagicaVoxel</li>
+
+                </ul>
+            </section>
+            <section>
+                Dealing with 360 video
+            </section>
+            <section>
+                For the Gear 360 footage you need to stich the footage. Software is <a hreaf="https://www.samsung.com/ca/support/mobile-devices/gear-360-2017-how-i-install-the-cyberlink-action-director-software/">here</a>
+            </section>
+            <section>
+                Install Code: RFAJ509AAF1R
+            </section>
+            <section>
+                <a href="https://github.com/mhellar/sfaixr/blob/master/day4/vid.zip?raw=true">360 Video Template</a>
+            </section>
+            <section>
+                Editing 360 video in premiere <a href="https://studio.knightlab.com/results/storytelling-layers-on-360-video/how-to-edit-360-video-in-premiere/">reference</a>
+            </section>
+            <section>
+                In these some of these scenes I'm using the <a
+                    href="https://github.com/supermedium/aframe-environment-component">A-frame environment component</a>
+                to
+                quickly add atmosphere</a><br>
+                Let's look at 1.html
+            </section>
+
+
+            <section>
+                <ul>
+                    <li>Loading a 3d models</li>
+                    <li class="fragment">A-frame has built in support for 3d model file formats
+                    </li>
+                    <li class="fragment">There are many different file formats like .obj, .gltf and collada
+                    </li>
+                    <li class="fragment">Obj has a .obj file for the geometry and can have a .mtl file for the texture
+                    </li>
+                    <li class="fragment">Obj is the classic format, Look at 2.html</li>
+                    <li class="fragment">
+                        <a href="https://aframe.io/docs/0.9.0/primitives/a-obj-model.html">Obj Import reference</a>
+                    </li>
+                </ul>
+                <pre><code data-trim class="fragment">
+<!-- goes in a-assets-->
+<a-asset-item id="si-obj" src="assets/models/si/space_invader.obj">
+</a-asset-item>
+<a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl">
+</a-asset-item>
+
+<!-- goes in a-scene -->
+<a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
+</a-entity>
+            
+</code></pre>
+
+            </section>
+
+
+            <section>
+                <ul>
+                    <li>GLTF (GL Transmission Format),JPEG of 3D</li>
+                    <li class="fragment">This new format aims to be the standard</li>
+                    <li class="fragment">This is the modern and preferred format for WebXR</li>
+                    <li class="fragment">Look at 3.html in the code folder</li>
+                    <li class="fragment">Obj has a .obj file for the geometry and a .mtl file for the texture</li>
+                    <li class="fragment">
+                        <a href="https://aframe.io/docs/0.8.0/components/gltf-model.html">GLTF model reference</a>
+                    </li>
+                </ul>
+                <pre><code data-trim class="fragment">
+<!-- goes in a-assets-->
+<a-asset-item id="temple" src="assets/models/temple_environment/scene.gltf" position="0 -1 0">
+</a-asset-item>
+
+<!-- goes in a-scene -->
+<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"> 
+</a-entity>
+            
+                    </code></pre>
+
+            </section>
+
+
+            <section>
+                GTLF Models can have data like animation embedded.
+                To use animations we hve to add a js library called <a
+                    href="https://github.com/donmccurdy/aframe-extras">a-frame extras</a> and add the animation-mixer
+                attibue to the model<br>
+                Let's look at 3a.html
+            </section>
+
+
+            <section>
+                <ul>
+                    <li>Places to get models</li>
+                    <li class="fragment">
+                        <a
+                            href="https://sketchfab.com/models?features=downloadable&sort_by=-likeCount&type=models">Sketchfab</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="https://poly.google.com">Google Poly</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="https://www.turbosquid.com/">Turbosquid</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="https://3dwarehouse.sketchup.com/?hl=en">3d Warehouse</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="https://www.mixamo.com/">Mixamo animated models</a>
+                    </li>
+            </section>
+
+            <section>
+                <img src="img/magica.jpg">
+                <a href="https://ephtracy.github.io/">MagicaVoxel</a>
+            </section>
+
+            <section>
+                <li>Exercise 1a</li>
+                <li>
+                    Take 20 minutes or so and create a model in MagicaVoxel.
+                </li>
+            </section>
+
+            <!-- <section>
+                <ul>
+                    <li>GLTF converters</li>
+                    <li class="fragment">
+                        <a href="https://github.com/pissang/clay-viewerm">Clay Viewer</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="http://52.4.31.236/convertmodel.html">Online Converter</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="https://github.com/facebookincubator/FBX2glTF/releases">FBX to GLTF</a>
+                    </li>
+                    <li class="fragment">
+                        <a href="https://github.com/AnalyticalGraphicsInc/obj2gltf">OBJ to GLTF</a>
+                    </li>
+            </section> -->
+            <section>
+                <li>Exercise 1b</li>
+                <li class="fragment">
+                    Lets look at index.html in excercise1
+                </li>
+                <li class="fragment">
+                    Can you find some models on sketchfab and download it into the models folder
+                </li>
+                <li class="fragment">
+                    Then add them into the code of index.html to create a scene?
+                </li>
+                <li class="fragment">
+                    Start looking for a model and I will come around and help everyone
+                </li>
+            </section>
+
+
+            <section>
+                <ul>
+                    <li>Sound</li>
+                    <li class="fragment">Importing Sound
+                    </li>
+                    <li class="fragment">You can import wav and mp3 files
+                    </li>
+                    <li class="fragment">Let look at the <a
+                            href="https://aframe.io/docs/1.0.0/primitives/a-sound.html#sidebar">sound component</a>
+                    </li>
+                    <li class="fragment">Let look at the contents of the sound 1 folder</li>
+                </ul>
+                <pre><code data-trim class="fragment">
+<!-- goes in a-assets-->
+<audio id="swell" crossorigin="anonymous" preload="auto" src="snd/footsteps_high.wav"></audio>
+
+<!-- goes in a-scene -->
+<a-sound src="#swell" autoplay="true" loop="true" volume="1"></a-sound>
+</code></pre>
+
+            </section>
+
+            <section>
+                Adding the <a href="https://aframe.io/docs/1.0.0/components/animation.html#sidebar">animation
+                    attribute</a><br>
+                Let's look at 4.html
+            </section>
+
+            <section>
+                you can animate multiple properties by giving the animation__name convention
+                Let's look at 4a.html
+            </section>
+
+            <section>
+                <li>Exercise 2</li>
+                <li class="fragment">
+                    Lets look at index.html in excercise2
+                </li>
+                <li class="fragment">
+                    Let add some colleted sounds, 360 models and animations to it
+                </li>
+                <li class="fragment">
+                    We'll do this one on one
+                </li>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Lights</li>
+                    <li class="fragment">Look at scene l1.html</li>
+                    <li class="fragment">As the cube rotates the light reflects off of it</li>
+                    <li class="fragment">You need a light or else you wouldn't see anything</li>
+                    <li class="fragment">If we look at the code the is no a-light</li>
+                    <li class="fragment">A-frame add a default light for us</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Lights</li>
+                    <li class="fragment">Look at scene l2.html</li>
+                    <li class="fragment">We added a directional light which streams photons from the upper right</li>
+                    <li class="fragment">Uncomment line 12 and you will have light from both directions</li>
+                    <li class="fragment">Comment line 12 and uncomment line 13</li>
+                    <pre><code data-trim class="fragment">
+<a-light type="directional" position="-1 1 1" color="white"></a-light>
+                </code></pre>
+
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Anbient Lights</li>
+                    <li class="fragment">Look at scene l2.html</li>
+                    <li class="fragment">Comment lines 12 and line 13</li>
+                    <li class="fragment">Uncomment line 14 to add an ambient light</li>
+                    <li class="fragment">Ambient lights affect all places in the scene, regardless of what direction
+                        they are facing.</li>
+                    <li class="fragment">Make suer to not make your ambient lights to intense or it will overide your
+                        directional light</li>
+                    <pre><code data-trim class="fragment">
+<a-light type="ambient" color="white" intensity="0.5"></a-light>
+                    </code></pre>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Point Light and Emissive Materials</li>
+                    <li class="fragment">Look at scene l3.html</li>
+                    <li class="fragment">On line 12 we have created a sphere which has an emmisive attribute</li>
+                    <li class="fragment">An emmisive color allows an object to cast it's own light</li>
+                    <li class="fragment">The emissive color makes the moon visible, but it doesn't produce light that
+                        shines on the rest of the
+                        scene.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Point Light and Emissive Materials</li>
+                    <li class="fragment">Look at scene l3.html</li>
+                    <li class="fragment">On line 13 we attach a point light to the sphere</li>
+                    <li class="fragment">Point lights are similar to directional lights except that the intensity
+                        decreases as objects get further
+                        away from the light.</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Shadows</li>
+                    <li class="fragment">Look at scene l4.html</li>
+                    <li class="fragment">Shadows are very expensive to compute so they are turned off by default.</li>
+                    <li class="fragment">To work with shadows we need to think of three things:</li>
+                    <li class="fragment">Which light will be used to create the shadow (the moon light)</li>
+                    <li class="fragment">Which object will cast a shadow (the cube)</li>
+                    <li class="fragment">which object will receive a shadow (the plane)</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Shadows</li>
+                    <li class="fragment">Look at scene l4.html</li>
+                    <li class="fragment">To turn on shadows we need to add castShadow:true; to the light, line 14</li>
+                    <li class="fragment">The we add shadow="cast: true" to the cube, line 20</li>
+                    <li class="fragment">And we add shadow="receive: true" to the plane, line 19</li>
+                </ul>
+            </section>
+
         </div>
     </div>
     </div>
