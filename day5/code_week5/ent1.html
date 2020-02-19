@@ -21,7 +21,9 @@
     <a-entity geometry="primitive: box" material="color: green; emissive: green; emissiveIntensity: 1;"
       position="0 3 -2" light="type: point; intensity: 2.0; color: green;"></a-entity>
 
+    <!-- nesting entities where the parent has an animation component -->
     <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
+      <!-- child entity has an animation component -->
       <a-entity geometry="primitive: box" material="color: green; emissive: green; emissiveIntensity: 1;"
         position="5 0 0" light="type: point; intensity: 2.0; color: green;"></a-entity>
     </a-entity>

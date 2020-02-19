@@ -48,12 +48,6 @@
             </section>
 
             <section>
-                Up until now we've been maily using primitives like a-box and a-sphere etc... There is a more versatile
-                way of creating objects using the a-entity tag. Entities are placeholder objects to which we plug in
-                components to provide them appearance, behavior, and functionality.
-            </section>
-
-            <section>
                 By itself the a-entity tag is just a place holder. We can attach components to it to make it render
                 something or do something. To give it shape and appearance, we can attach the
                 <a href="https://aframe.io/docs/1.0.0/components/geometry.html">geometry</a>,
@@ -62,34 +56,56 @@
                 <a href="https://aframe.io/docs/1.0.0/components/animation.html">animation</a>
                 and other components. Let's look at ent1.html
             </section>
-
             <section>
-                Nesting Entities
+                Take some time to looks for the docs of:
+                <a href="https://aframe.io/docs/1.0.0/components/geometry.html">geometry</a>,
+                <a href="https://aframe.io/docs/1.0.0/components/material.html">material</a>,
+                <a href="https://aframe.io/docs/1.0.0/components/animation.html">animation</a>
+                and create some entities. 
             </section>
 
             <section>
-                Mixins
+                <ul>
+                    <li>Parent and Child Transforms</li>
+                    <li class="fragment">Entities can have a single parent and multiple children.</li>
+                    <li class="fragment">Child entities inherit transformations (i.e., position, rotation, and scale) from their parent.</li>
+                    <li class="fragment">You can also group things in an a-entity tag</li>
+                    <li class="fragment">Look at ent2.html</li>
+                </ul>
+                <pre><code data-trim class="fragment">
+
+                    <a-entity geometry="primitive: sphere; radius: .5" position="0 2 -2" color="#EF2D5E">
+                        <!-- a-sphere postioned at "0 .5 0" parented from the first sphere -->
+                        <a-entity geometry="primitive: sphere; radius: .5" position="0 .5 0" radius="1.25" color="#EF2D5E"></a-entity>
+                        </a-entity>
+                  
+                        <!-- a-sphere postioned at "0 1 1" with no parent -->
+                        <a-entity geometry="primitive: sphere; radius: .5" position="-2 2 -2" color="blue"></a-entity>>
+                    </code></pre>
+            </section>
+
+            <section>
+                Let's look at a more complex example of parenting ent3.html
+            </section>
+
+            <section>
+                Mixins<br>
+                Mixins provide a way to compose and reuse commonly-used sets of component properties. They are defined using the a-mixin element and are placed in a-assets.
+                <br>
+                <a href="https://aframe.io/docs/1.0.0/core/mixins.html">Mixin Docs</a><br>
+                let's look at mix1.html
             </section>
 
             <section>
                 Gaze Controls and Cursor component
             </section>
 
-            <section>
-                Gaze Controls and Cursor component
-            </section>
 
-            <section>
-                Mixins
-            </section>
             <section>
                 <ul>
                     <li>Lights</li>
-                    <li class="fragment">Look at scene l1.html</li>
-                    <li class="fragment">As the cube rotates the light reflects off of it</li>
-                    <li class="fragment">You need a light or else you wouldn't see anything</li>
-                    <li class="fragment">If we look at the code the is no a-light</li>
-                    <li class="fragment">A-frame add a default light for us</li>
+                    <li class="fragment"><a href="https://aframe.io/docs/1.0.0/components/light.html">https://aframe.io/docs/1.0.0/components/light.html</a></li>
+                    <li class="fragment">Let's look at scene l1.html</li>
                 </ul>
             </section>
 
@@ -107,21 +123,6 @@
                 </ul>
             </section>
 
-            <section>
-                <ul>
-                    <li>Anbient Lights</li>
-                    <li class="fragment">Look at scene l2.html</li>
-                    <li class="fragment">Comment lines 12 and line 13</li>
-                    <li class="fragment">Uncomment line 14 to add an ambient light</li>
-                    <li class="fragment">Ambient lights affect all places in the scene, regardless of what direction
-                        they are facing.</li>
-                    <li class="fragment">Make sure to not make your ambient lights to intense or it will overide your
-                        directional light</li>
-                    <pre><code data-trim class="fragment">
-<a-light type="ambient" color="white" intensity="0.5"></a-light>
-                    </code></pre>
-                </ul>
-            </section>
 
             <section>
                 <ul>
@@ -136,16 +137,6 @@
                 </ul>
             </section>
 
-            <section>
-                <ul>
-                    <li>Point Light and Emissive Materials</li>
-                    <li class="fragment">Look at scene l3.html</li>
-                    <li class="fragment">On line 13 we attach a point light to the sphere</li>
-                    <li class="fragment">Point lights are similar to directional lights except that the intensity
-                        decreases as objects get further
-                        away from the light.</li>
-                </ul>
-            </section>
 
             <section>
                 Shader Materials
@@ -241,7 +232,7 @@
             <section>
                 <ul>
                     <li>Lets look at the Component API reference to see the schema type available</li>
-                    <li><a href="https://aframe.io/docs/0.8.0/core/component.html">Aframe component API reference</a>
+                    <li><a href="https://aframe.io/docs/1.0.0/core/component.html">Aframe component API reference</a>
                     </li>
                 </ul>
             </section>
