@@ -2,26 +2,22 @@
 <html>
 
 <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <!-- import aframe -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+
 </head>
 
 <body>
-
     <a-scene>
-        <a-scene background="color:black;">
-            <a-sphere radius="1" position="4 4 -4" color="lightgrey" emissive="lightgrey">
-                <a-entity light="type:point;
-                    castShadow:true;
-                    intensity:2.0;
-                    color:gray;
-                    distance:50;" position="4 4 -4"></a-entity>
-            </a-sphere>
-            <a-plane width="40" shadow="receive: true" height="40" color="red" position="0 -1 -4" rotation="-90 0 0">
-            </a-plane>
-            <a-box width="1" height="1" depth="1" shadow="cast: true" color=" red " position="0 0 -4 "
-                rotation="0 45 0 ">
+        <!-- add environement to scene -->
+        <a-entity environment="preset: forest"></a-entity>
 
-        </a-scene>
 
     </a-scene>
 </body>
