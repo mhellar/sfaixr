@@ -9,17 +9,13 @@
 
   <a-scene>
     <a-assets>
-      <img id="sky" src="assets/img/sfai12.jpg">
+      <a-assets>
+        <a-asset-item id="room" src="assets/models/shades_of_light/scene.gltf" position="0 -1 0">
+        </a-asset-item>
+      </a-assets>
     </a-assets>
 
-    <!-- a-entity by itself does nothing -->
-    <a-entity></a-entity>
-
-    <!-- we can start to give it definition with attributes such as geometry, material and postion components -->
-    <a-entity geometry="primitive: box" material="color: red" position="0 1 -2"></a-entity>
-
-    <a-entity geometry="primitive: box" material="color: green; emissive: green; emissiveIntensity: 1;"
-      position="0 3 -2" light="type: point; intensity: 2.0; color: green;"></a-entity>
+    <a-gltf-model src="#room" scale="1 1 1" position="0 0 0"></a-gltf-model>
 
     <!-- nesting entities where the parent has an animation component -->
     <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">

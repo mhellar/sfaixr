@@ -4,6 +4,7 @@
     <title>Basic Interactions - A-Frame</title>
     <meta name="description" content="Interactions - A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- add event set component -->
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 </head>
 
@@ -23,14 +24,22 @@
         
         <a-sky id="bg" color="#fff"></a-sky>
 
+        <!-- add event_set with an _event lalong with attribute to change -->
 
+        <!-- <a-box position="-3 1 -5" rotation="0 90 30" scale="" color="#F44336" 
+        event-set="_event: mouseenter; material.color: blue">
+        </a-box> -->
+
+        <!-- add multiple event_set properties ending in __some name -->
+    
         <a-box position="-3 1 -5" rotation="0 90 30" scale="" color="#F44336" 
             event-set__click="material.color: red; scale: 2 2 2"
             event-set__mouseenter="material.color: blue"
             event-set__1="_event: mouseleave; material.color: red"
             event-set__enter="_event: mouseenter; _target: #ground; color: #F44336"
             sound="src: assets/sound/sound9.mp3; on: mouseenter"></a-box>
-        </a-box>
+        </a-box> 
+
         <a-box position=" -1 2 -5 " rotation="0 45 45 " scale="0.75 0.75 0.75 " color="#2196F3" 
             event-set__click="material.color: purple; scale: 2 2 2"
             event-set__mouseenter="material.color: green"

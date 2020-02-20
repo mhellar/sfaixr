@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>WebVR Workshop: Day 3</title>
+    <title>WebXR: Week 5</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport"
@@ -32,41 +32,63 @@
             <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
                 data-background-size="100px" data-background-transition="zoom">
                 <figure>
-                    <h2 class="intro">WebVR Workshop: Day 3</h2 class="intro">
-                    <h2 class="intro">WebVR Workshop: Day 3</h2 class="intro">
-                    <h2 class="intro">WebVR Workshop: Day 3</h2 class="intro">
-                    <h2 class="intro">WebVR Workshop: Day 3</h2 class="intro">
+                    <h2 class="intro">WebXR: Week 5</h2 class="intro">
+                    <h2 class="intro">WebXR: Week 5</h2 class="intro">
+                    <h2 class="intro">WebXR: Week 5</h2 class="intro">
+                    <h2 class="intro">WebXR: Week 5</h2 class="intro">
                 </figure>
             </section>
             <section>
                 <a href="https://bit.ly/2SHfMCv">Code Download</a>
             </section>
             <section>
-                To get started with interactivity we can add a gazed based cursor. A-frame creates a defualt camera. To create a cursor we will override the defualt camera and add out own.
+                Interactivity part 1
+            </section>
+            <section>
+                To get started with interactivity we can add a gazed based cursor. To create a cursor we will create a camera.
                 Then we add a entity with the cursor component with a -1 on the z axis so it places it in front of the camera.<br>
                 <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor Documentation</a>
                 Let's look at c.html
             </section>
 
             <section>
-                We are also using the <a href="https://github.com/supermedium/superframe/tree/master/components/event-set/">Event Set Component</a> to respond to cursor events.
+                We can use the <a href="https://github.com/supermedium/superframe/tree/master/components/event-set/">Event Set Component</a> to respond to cursor events.
                 Let's look at c1.html
             </section>
 
             <section>
-                <a href="https://aframe.io/docs/1.0.0/components/animation.html">Animation</a> has a startEvents property that listens for.
+                The event-set component also has a _target: property which can affect onther object
+                Let's look at c1.html again
+            </section>
+
+
+            <section>
+                <a href="https://aframe.io/docs/1.0.0/components/animation.html">Animation</a> has a startEvents property that listens for on it's own.
                 Let's look at c2.html
             </section>
 
             <section>
-                The <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor Documentation</a> acts like a mouse and uses mouse events. 
-                Other VR controllers offer differnt events. Have Quick read on:
+                The <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor</a> acts like a mouse and uses mouse events which are listed in the documentation. 
+                Other VR controllers offer different events.
                 <a href="https://aframe.io/docs/1.0.0/introduction/interactions-and-controllers.html">Interaction and Controllers</a>
+            </section>
+
+            <section>
+                In checkpoint.html we combine the cursor with <a href="https://github.com/donmccurdy/aframe-extras/tree/master/src/controls">Checkpoint Controls</a> for a movement system
+            </section>
+
+            <section>
+                In the cursor_template folder I've made a basic scene with some interactivity. Tey addding to or modifying it. I'll come around an work with everyone.
+            </section>
+
+            <section>
+                <a href="https://github.com/supermedium/superframe/tree/master/components/audioanalyser">The Audio Analyzer Component</a>
             </section>
             
             <section>
-                a-entity and components
+                Let's look at curve3/index.html this is a template to get started with the Audio Analyzer Component
             </section>
+            
             <section>
                 Up until now we've been maily using primitives like a-box and a-sphere etc... There is a more versatile
                 way of creating objects using the a-entity tag. Entities are placeholder objects to which we plug in
@@ -80,14 +102,7 @@
                 <a href="https://aframe.io/docs/1.0.0/components/material.html">material</a>,
                 <a href="https://aframe.io/docs/1.0.0/components/light.html">light</a>,
                 <a href="https://aframe.io/docs/1.0.0/components/animation.html">animation</a>
-                and other components. Let's look at ent1.html
-            </section>
-            <section>
-                Take some time to looks for the docs of:
-                <a href="https://aframe.io/docs/1.0.0/components/geometry.html">geometry</a>,
-                <a href="https://aframe.io/docs/1.0.0/components/material.html">material</a>,
-                <a href="https://aframe.io/docs/1.0.0/components/animation.html">animation</a>
-                and create some entities. Use ent_template.html as a starting point.
+                and other components. Let's look at ent.html
             </section>
 
             <section>
@@ -111,11 +126,7 @@
             </section>
 
             <section>
-                Let's look at a more complex example of parenting ent3.html
-            </section>
-
-            <section>
-                Let's look at a more complex example of parenting ent3.html
+                More complex examples of parenting ent1.html and ent3.html
             </section>
 
             <section>
@@ -161,6 +172,36 @@
                 </ul>
             </section>
 
+            
+            <section>
+                <a href="https://aframe.io/docs/1.0.0/components/shadow.html">Shadows</a>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Shadows</li>
+                    <li class="fragment">Look at scene l4.html</li>
+                    <li class="fragment">Shadows are very expensive to compute so they are turned off by default.</li>
+                    <li class="fragment">To work with shadows we need to think of three things:</li>
+                    <li class="fragment">Which light will be used to create the shadow (the moon light)</li>
+                    <li class="fragment">Which object will cast a shadow (the cube)</li>
+                    <li class="fragment">which object will receive a shadow (the plane)</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Shadows</li>
+                    <li class="fragment">Look at scene l4.html</li>
+                    <li class="fragment">To turn on shadows we need to add castShadow:true; to the light, line 14</li>
+                    <li class="fragment">The we add shadow="cast: true" to the cube, line 20</li>
+                    <li class="fragment">And we add shadow="receive: true" to the plane, line 19</li>
+                </ul>
+            </section>
+
+            <section>
+                Have a look at l5.html for an advanced shadow example
+            </section>
 
             <section>
                 Shader Materials, Shaders are small graphics programs that run on the graphics card.
@@ -177,7 +218,7 @@
 
 
             <section>
-                Wee will use the <a href="https://github.com/msj121/aframeFrogShaders">https://github.com/msj121/aframeFrogShaders</a> addon to use the exported shader as a material in our scene.
+                We will use the <a href="https://github.com/msj121/aframeFrogShaders">https://github.com/msj121/aframeFrogShaders</a> addon to use the exported shader as a material in our scene.
             </section>
 
 
@@ -192,8 +233,8 @@
             </section> -->
             <section>
                 Taking a screenshot:
-                To take a 360° (equirectangular) screenshot, press <ctrl> + <alt> + <shift> + s on the keyboard.<br>
-                            To take a normal (perspective) screenshot, press <ctrl> + <alt> + s on the keyboard.
+                To take a 360° (equirectangular) screenshot, press ctrl + alt + shift + s on the keyboard.<br>
+                            To take a normal (perspective) screenshot, press ctrl + alt + s on the keyboard.
             </section>
 
             <section>
@@ -300,12 +341,12 @@
                     <li>Let's take a look at Lesson 11</li>
                 </ul>
             </section> -->
-            <section>
+            <!-- <section>
                 <p>Homework read:
                     <a href="https://aframe.io/docs/1.0.4/introduction/entity-component-system.html">entity-component
                         system</a>
                 </p>
-            </section>
+            </section> -->
         </div>
     </div>
     </div>
