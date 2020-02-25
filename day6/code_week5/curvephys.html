@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
+    <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <a-scene>
+        <!-- <a-entity id="enviro" position="0 -.001 0" scale="15 15 15" environment="
+            preset: tron; 
+            groundYScale: 100; 
+            fog: 0; 
+            dressingAmount: 100; 
+            groundColor2: #dd00d1; 
+            groundColor: #dd0011; 
+            groundTexture: walkernoise;
+            ground: hills;
+            groundYScale: 30;
+            active: true; seed: 17; 
+            skyType: gradient; 
+            skyColor: #87faf4; 
+            horizonColor: #b100200;
+            flatShading: true; 
+            dressing: arches;
+            dressingColor: #4f30f7; 
+            dressingScale: 0; 
+            dressingAmount: 0;
+            dressingOnPlayArea: 1; 
+            gridColor: #239893">
+        </a-entity> -->
+        <a-assets>
+      <a-asset-item id="mask" src="assets/models/mask/scene.gltf" position="0 -1 0">
+        <a-mixin id="sphere" geometry="primitive:torusKnot;radius:7.496;radiusTubular:0.636490550290432;p:6;q:8" >
+        </a-mixin>
+
+        <a-mixin id="random-1" random-position="min: 10 10 10; max: -10 10 -10" dynamic-body="linearDamping:.5 angularDamping:.5" ></a-mixin>
+        <a-mixin id="random-2" random-position="min: 10 10 10; max: -10 10 -10" dynamic-body="linearDamping:.5 angularDamping:.5" ></a-mixin>
+        <a-mixin id="random-3" random-position="min: 10 10 10; max: -10 10 -10" dynamic-body="linearDamping:.5 angularDamping:.5" ></a-mixin>
+
+        <a-mixin id="red" material="color: #FF4B68"></a-mixin>
+        <a-mixin id="blue" material="color: #118DF0"></a-mixin>
+        <a-mixin id="yellow" material="color: #FBFFA3"></a-mixin>
+      </a-asset-item>
+    </a-assets>
+
+    <!-- replace with entity generator -->
+
+    <a-entity entity-generator="mixin: random-1 red sphere; num: 20"></a-entity>
+    <a-entity entity-generator="mixin: random-2 blue sphere; num: 20">
+    <a-entity entity-generator="mixin: random-3 yellow sphere; num: 20"></a-entity>
+
+    <a-light type="ambient" color="#222"></a-light>
+    <a-light type="point" intensity="0.5"></a-light>
+
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="0 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".2 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".4 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".6 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".8 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.2 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.4 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.6 4 -5"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.8 4 -5"></a-gltf-model>
+
+
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="0 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".2 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".4 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".6 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position=".8 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.2 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.4 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.6 4 -9"></a-gltf-model>
+    <a-gltf-model dynamic-body="linearDamping:.5 angularDamping:.5" src="#mask" scale=".75 .75 .75" position="1.8 4 -9"></a-gltf-model>
+
+        <a-box static-body width=1000 height=0.001 depth=1000 visible="true"></a-box>
+
+        <a-curve id="track1">
+            <a-curve-point position="-3.48795 1 -10" geometry="height: 0.1; width: 0.1; depth: 0.1" material="color: #ff0000" curve-point=""></a-curve-point>
+            <a-curve-point position="0 1 -5" geometry="height: 0.1; width: 0.1; depth: 0.1" material="color: #ff0000" curve-point=""></a-curve-point>
+            <a-curve-point position="3 1 -5" geometry="height: 0.1; width: 0.1; depth: 0.1" material="color: #ff0000" curve-point=""></a-curve-point>
+            <a-curve-point position="3 1 -10" geometry="height: 0.1; width: 0.1; depth: 0.1" material="color: #ff0000" curve-point=""></a-curve-point>
+            <a-curve-point position="-3.48795 1 -10" geometry="height: 0.1; width: 0.1; depth: 0.1" material="color: #ff0000" curve-point=""></a-curve-point>
+        </a-curve>
+
+        <a-draw-curve curveref="#track1" material="shader: line;
+        color: red;"></a-draw-curve>
+    
+    <a-entity>
+        <a-entity alongpath="curve: #track1; loop: true; dur: 10000">
+            <!-- nesting entities where the parent has an animation component -->
+              <a-entity >
+                <!-- child entity has an animation component -->
+                <a-entity geometry="primitive: sphere" static-body material="color: green; emissive: green; emissiveIntensity: 1;"
+                  position="0 0 0"></a-entity>
+              </a-entity>
+            </a-entity>
+    </a-entity>
+
+        <!-- Set the camera to follow the curve -->
+        <!-- <a-entity alongpath="curve: #track1; loop: true; dur: 100000">
+            <a-camera></a-camera>
+        </a-entity> -->
+
+    </a-scene>
+</body>
