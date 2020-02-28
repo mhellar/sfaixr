@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebXR: Day 4</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
+                data-background-size="100px" data-background-transition="zoom">
+                <figure>
+                    <h2 class="intro">WebXR: Day 4</h2 class="intro">
+                    <h2 class="intro">WebXR: Day 4</h2 class="intro">
+                    <h2 class="intro">WebXR: Day 4</h2 class="intro">
+                    <h2 class="intro">WebXR: Day 4</h2 class="intro">
+                </figure>
+            </section>
+            <section>
+                <a href="https://bit.ly/2VspsCS">Code Download</a>
+            </section>
+            <section>
+                Kinect and Depthkit
+            </section>
+
+            <section>
+                <a href="https://bit.ly/2Pqk5zW">Depthkit Template Download</a>
+            </section>
+
+            <section>
+                Interactivity part 1
+            </section>
+            <section>
+                To get started with interactivity we can add a gazed based cursor. To create a cursor we will create a
+                camera.
+                Then we add a entity with the cursor component with a -1 on the z axis so it places it in front of the
+                camera.<br>
+                <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor Documentation</a>
+                Let's look at c.html
+            </section>
+
+            <section>
+                We can use the <a
+                    href="https://github.com/supermedium/superframe/tree/master/components/event-set/">Event Set
+                    Component</a> to respond to cursor events.
+                Let's look at c1.html
+            </section>
+
+            <section>
+                The event-set component also has a _target: property which can affect onther object
+                Let's look at c1.html again
+            </section>
+            <section>
+                <a href="https://aframe.io/docs/1.0.0/components/animation.html">Animation</a> has a startEvents
+                property that listens for on it's own.
+                Let's look at c2.html
+            </section>
+
+            <section>
+                The <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor</a> acts like a mouse and uses
+                mouse events which are listed in the documentation.
+                Other VR controllers offer different events.
+                <a href="https://aframe.io/docs/1.0.0/introduction/interactions-and-controllers.html">Interaction and
+                    Controllers</a>
+            </section>
+            <section>
+                In checkpoint.html we combine the cursor with <a
+                    href="https://github.com/donmccurdy/aframe-extras/tree/master/src/controls">Checkpoint Controls</a>
+                for a movement system
+            </section>
+            <section>
+                <a href="https://github.com/donmccurdy/aframe-physics-system#basics">Physics</a>
+            </section>
+            <section>
+                Look at Phys1.html and we will look at a basic physics setup
+            </section>
+            <section>
+                Look at Phys2.html and Phys3.html
+            </section>
+            <section>
+                To make the last 2 scenes I used the <a href="https://github.com/supermedium/superframe/tree/master/components/randomizer">randomizer component</a> and the <a href="https://github.com/supermedium/superframe/tree/master/components/entity-generator/">entity generator component</a> 
+            </section>
+            <section>
+                I want to walk you through how to do this so lets start by reviewing <a href="https://aframe.io/docs/1.0.0/core/mixins.html#sidebar">Mixins</a> look at mix1.html
+            </section>
+
+            <section>
+                now lets look at entgen.html and walk through it
+            </section>
+            <section>
+                Now we can revisit Phys3.html and Phys2.html
+            </section>
+            <section>
+                Maya Basics
+            </section>
+            <section>
+                Painting with Substance painter
+            </section>
+
+            <section>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/a_GbI-au6v4" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </section>
+
+            <section>
+                Taking a screenshot:
+                To take a 360° (equirectangular) screenshot, press ctrl + alt + shift + s on the keyboard.<br>
+                To take a normal (perspective) screenshot, press ctrl + alt + s on the keyboard.
+            </section>
+
+            <section>
+                Components of A-Frame’s entity-component framework are JavaScript modules that can be mixed, matched,
+                and composed onto entities
+                to build appearance, behavior, and functionality. We can register component in JavaScript and and add it
+                to an a-entity tag. Components are configurable, reusable, and shareable. Most code in an A-Frame
+                application should live within components.
+            </section>
+
+
+            <section>
+                You use the AFRAME.registerComponent() function to register a component, do this before
+                <a-scene></a-scene> Have a look at comp.html
+            </section>
+
+            <section>
+                You can also define an AFRAME.registerComponent() in a seperate file
+                <a-scene></a-scene> Have a look at the content of the template folder
+            </section>
+
+            <section>
+                <ul>
+                    <li>Default functions of a component</li>
+                    <li>Inside the comp_template folder, look at the file mycomponent.js</li>
+                    <li>This is a boilerplate that show all the built in functions that a-frame gives us</li>
+                    <li>Today we will start with init() which is called once when the component is first plugged into
+                        its
+                        entity.</li>
+                </ul>
+            </section>
+            <section>
+                <li><a href="https://aframe.io/docs/1.0.0/introduction/writing-a-component.html">writing a component
+                        reference</a>
+                </li>
+
+            </section>
+            <section>
+                We’ll go over examples on writing components. The examples will do mostly trivial things at first but
+                will will build up
+                in complexity as we go.
+            </section>
+            <section>
+                Let's look at the code in 15.html
+            </section>
+            <section>
+                After the entity is attached and initialized, it will initialize our hello-world component. The
+                wonderful thing about components
+                is that they are called only after the entity is ready.
+            </section>
+            <section>
+                <ul>
+                    <li>Defining Properties with the Schema</li>
+                    <li>The schema defines the properties of its component. As an analogy, if we think of a component as
+                        a function, then a component’s properties are like its function arguments.</li>
+                    <li>Have a look at 16.html and try uncommenting line 33</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Lets look at the Component API reference to see the schema type available</li>
+                    <li><a href="https://aframe.io/docs/1.0.0/core/component.html">Aframe component API reference</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>We can add an element to the scene using document.createElement(),setAttribute() and
+                        .appendChild()
+                    </li>
+                    <li>Have a look at 17.html</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>In 18.html we combine the last lesson with multiple schema propeties and entities</li>
+                    <li>Let's take a look</li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Let's take a look at Lesson 19.html, in this example we append the animation atrribute</li>
+                </ul>
+            </section>
+
+            <section>
+                <a href="https://github.com/supermedium/superframe/tree/master/components/audioanalyser">The Audio
+                    Analyzer Component</a>
+            </section>
+
+            <section>
+                Audio Reactivity
+            </section>
+
+            <section>
+                Let's look at curve3/index.html this is a template to get started with the Audio Analyzer Component
+            </section>
+
+            <section>
+                Shader Materials, Shaders are small graphics programs that run on the graphics card.
+            </section>
+            <section>
+                Let's look at shader/index.html
+            </section>
+
+            <section>
+                Writing shaders from scratch is a bit tricky but there is a site called <a
+                    href="https://shaderfrog.com/">https://shaderfrog.com/</a>,
+                where we can start playing around with them export them for use in our scene. Create an account to
+                begin.
+            </section>
+
+            <section>
+                We will use the <a
+                    href="https://github.com/msj121/aframeFrogShaders">https://github.com/msj121/aframeFrogShaders</a>
+                addon to use the exported shader as a material in our scene.
+            </section>
+
+            <section>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tC_EWLJ7elY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+
+
+
+        </div>
+    </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function () {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                condition: function () {
+                    return !!document.querySelector('pre code');
+                },
+                callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+</body>
+
+</html>

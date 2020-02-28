@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <a-scene>
+    <!-- <a-scene physics="debug: true; gravity: -9.8"> -->
+
+    <a-assets>
+
+    </a-assets>
+
+    <a-box position="-2 3 -3" rotation="0 45 0" scale=".5 .5 .5" color="#4CC3D9"></a-box>
+    <a-sphere position="0 3 -3" radius="1.25" scale=".5 .5 .5" color="#EF2D5E"></a-sphere>
+    <a-cylinder position="2 3 -3" radius="0.5"  scale=".5 .5 .5" height="1.5" color="#FFC65D"></a-cylinder>
+
+    
+    <!-- <a-box position="-2 3 -3" rotation="0 45 0" scale=".5 .5 .5" color="#4CC3D9" dynamic-body></a-box>
+    <a-sphere position="0 3 -3" radius="1.25" scale=".5 .5 .5" color="#EF2D5E" dynamic-body></a-sphere>
+    <a-cylinder position="2 3 -3" radius="0.5"  scale=".5 .5 .5" height="1.5" color="#FFC65D" dynamic-body></a-cylinder> -->
+
+    <!-- <a-box position="-2 3 -3" rotation="0 45 0" scale=".5 .5 .5" color="#4CC3D9" dynamic-body="linearDamping: -5; angularDamping:.001"></a-box>
+    <a-sphere position="0 3 -3" radius="1.25" scale=".5 .5 .5" color="#EF2D5E" dynamic-body></a-sphere>
+    <a-cylinder position="2 3 -3" radius="0.5"  scale=".5 .5 .5" height="1.5" color="#FFC65D" dynamic-body></a-cylinder>  -->
+
+    <!-- <a-box position="-2 3 -3" rotation="0 45 0" scale=".5 .5 .5" color="#4CC3D9" dynamic-body></a-box>
+    <a-sphere position="0 3 -3" radius="1.25" scale=".5 .5 .5" color="#EF2D5E" dynamic-body></a-sphere>
+    <a-cylinder position="2 3 -3" radius="0.5"  scale=".5 .5 .5" height="1.5" color="#FFC65D" dynamic-body></a-cylinder> -->
+
+
+    <a-light type="ambient" color="#222"></a-light>
+    <a-light type="point" intensity="0.5"></a-light>
+
+    <a-box id="ground" width=1000 height=0.001 depth=1000 visible="true"></a-box>
+
+    <a-box id="ground" static-body width=1000 height=0.001 depth=1000 visible="true"></a-box>
+
+    </a-scene>
+</body>
