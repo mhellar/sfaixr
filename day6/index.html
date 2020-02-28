@@ -41,55 +41,7 @@
             <section>
                 <a href="https://bit.ly/2VspsCS">Code Download</a>
             </section>
-            <section>
-                Kinect and Depthkit
-            </section>
 
-            <section>
-                <a href="https://bit.ly/2Pqk5zW">Depthkit Template Download</a>
-            </section>
-
-            <section>
-                Interactivity part 1
-            </section>
-            <section>
-                To get started with interactivity we can add a gazed based cursor. To create a cursor we will create a
-                camera.
-                Then we add a entity with the cursor component with a -1 on the z axis so it places it in front of the
-                camera.<br>
-                <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor Documentation</a>
-                Let's look at c.html
-            </section>
-
-            <section>
-                We can use the <a
-                    href="https://github.com/supermedium/superframe/tree/master/components/event-set/">Event Set
-                    Component</a> to respond to cursor events.
-                Let's look at c1.html
-            </section>
-
-            <section>
-                The event-set component also has a _target: property which can affect onther object
-                Let's look at c1.html again
-            </section>
-            <section>
-                <a href="https://aframe.io/docs/1.0.0/components/animation.html">Animation</a> has a startEvents
-                property that listens for on it's own.
-                Let's look at c2.html
-            </section>
-
-            <section>
-                The <a href="https://aframe.io/docs/1.0.0/components/cursor.html">Cursor</a> acts like a mouse and uses
-                mouse events which are listed in the documentation.
-                Other VR controllers offer different events.
-                <a href="https://aframe.io/docs/1.0.0/introduction/interactions-and-controllers.html">Interaction and
-                    Controllers</a>
-            </section>
-            <section>
-                In checkpoint.html we combine the cursor with <a
-                    href="https://github.com/donmccurdy/aframe-extras/tree/master/src/controls">Checkpoint Controls</a>
-                for a movement system
-            </section>
             <section>
                 <a href="https://github.com/donmccurdy/aframe-physics-system#basics">Physics</a>
             </section>
@@ -100,10 +52,15 @@
                 Look at Phys2.html and Phys3.html
             </section>
             <section>
-                To make the last 2 scenes I used the <a href="https://github.com/supermedium/superframe/tree/master/components/randomizer">randomizer component</a> and the <a href="https://github.com/supermedium/superframe/tree/master/components/entity-generator/">entity generator component</a> 
+                To make the last 2 scenes I used the <a
+                    href="https://github.com/supermedium/superframe/tree/master/components/randomizer">randomizer
+                    component</a> and the <a
+                    href="https://github.com/supermedium/superframe/tree/master/components/entity-generator/">entity
+                    generator component</a>
             </section>
             <section>
-                I want to walk you through how to do this so lets start by reviewing <a href="https://aframe.io/docs/1.0.0/core/mixins.html#sidebar">Mixins</a> look at mix1.html
+                I want to walk you through how to do this so lets start by reviewing <a
+                    href="https://aframe.io/docs/1.0.0/core/mixins.html#sidebar">Mixins</a> look at mix1.html
             </section>
 
             <section>
@@ -116,10 +73,6 @@
                 Maya Basics
             </section>
             <section>
-                Painting with Substance painter
-            </section>
-
-            <section>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/a_GbI-au6v4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -131,6 +84,32 @@
                 To take a normal (perspective) screenshot, press ctrl + alt + s on the keyboard.
             </section>
 
+
+            <section>
+                Let's look at curve3/index.html this is a template to get started with the Audio Analyzer Component
+            </section>
+
+            <section>
+                Shader Materials, Shaders are small graphics programs that run on the graphics card.
+            </section>
+            <section>
+                Let's look at shader/index.html
+            </section>
+
+            <section>
+                Writing shaders from scratch is a bit tricky but there is a site called <a
+                    href="https://shaderfrog.com/">https://shaderfrog.com/</a>,
+                where we can start playing around with them export them for use in our scene. Create an account to
+                begin.
+            </section>
+
+            <section>
+                We will use the <a
+                    href="https://github.com/msj121/aframeFrogShaders">https://github.com/msj121/aframeFrogShaders</a>
+                addon to use the exported shader as a material in our scene.
+            </section>
+
+
             <section>
                 Components of A-Frame’s entity-component framework are JavaScript modules that can be mixed, matched,
                 and composed onto entities
@@ -138,8 +117,6 @@
                 to an a-entity tag. Components are configurable, reusable, and shareable. Most code in an A-Frame
                 application should live within components.
             </section>
-
-
             <section>
                 You use the AFRAME.registerComponent() function to register a component, do this before
                 <a-scene></a-scene> Have a look at comp.html
@@ -164,7 +141,6 @@
                 <li><a href="https://aframe.io/docs/1.0.0/introduction/writing-a-component.html">writing a component
                         reference</a>
                 </li>
-
             </section>
             <section>
                 We’ll go over examples on writing components. The examples will do mostly trivial things at first but
@@ -227,31 +203,9 @@
             </section>
 
             <section>
-                Let's look at curve3/index.html this is a template to get started with the Audio Analyzer Component
-            </section>
-
-            <section>
-                Shader Materials, Shaders are small graphics programs that run on the graphics card.
-            </section>
-            <section>
-                Let's look at shader/index.html
-            </section>
-
-            <section>
-                Writing shaders from scratch is a bit tricky but there is a site called <a
-                    href="https://shaderfrog.com/">https://shaderfrog.com/</a>,
-                where we can start playing around with them export them for use in our scene. Create an account to
-                begin.
-            </section>
-
-            <section>
-                We will use the <a
-                    href="https://github.com/msj121/aframeFrogShaders">https://github.com/msj121/aframeFrogShaders</a>
-                addon to use the exported shader as a material in our scene.
-            </section>
-
-            <section>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tC_EWLJ7elY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tC_EWLJ7elY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </section>
 
 
