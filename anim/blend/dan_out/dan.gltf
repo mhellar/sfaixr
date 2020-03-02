@@ -1,0 +1,329 @@
+{
+    "asset": {
+        "generator": "FBX2glTF v0.9.7",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "buffers": [
+        {
+            "byteLength": 2510192,
+            "uri": "buffer.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 4800,
+            "byteOffset": 0
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14400,
+            "byteOffset": 4800
+        },
+        {
+            "buffer": 0,
+            "byteLength": 368166,
+            "byteOffset": 19200,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 374616,
+            "byteOffset": 387368,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 374616,
+            "byteOffset": 761984,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 249744,
+            "byteOffset": 1136600,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 374616,
+            "byteOffset": 1386344,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 374616,
+            "byteOffset": 1760960,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 374616,
+            "byteOffset": 2135576,
+            "target": 34962
+        }
+    ],
+    "scenes": [
+        {
+            "name": "Root Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "componentType": 5126,
+            "type": "SCALAR",
+            "count": 1200,
+            "bufferView": 0,
+            "byteOffset": 0,
+            "min": [
+                0.0
+            ],
+            "max": [
+                49.9583320617676
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "SCALAR",
+            "count": 3600,
+            "bufferView": 1,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 184083,
+            "bufferView": 2,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 31218,
+            "bufferView": 3,
+            "byteOffset": 0,
+            "min": [
+                -0.100912995636463,
+                -0.090761698782444,
+                -0.0455664992332458
+            ],
+            "max": [
+                0.112552002072334,
+                0.135995998978615,
+                0.0886109992861748
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 31218,
+            "bufferView": 4,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 31218,
+            "bufferView": 5,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 31218,
+            "bufferView": 6,
+            "byteOffset": 0,
+            "min": [
+                -0.112013749778271,
+                0.0,
+                -0.102214731276035
+            ],
+            "max": [
+                0.16787189245224,
+                0.0,
+                0.137952998280525
+            ],
+            "name": "blendShape1.Mesh2"
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 31218,
+            "bufferView": 7,
+            "byteOffset": 0,
+            "min": [
+                -0.070861779153347,
+                0.0,
+                0.0
+            ],
+            "max": [
+                0.070861779153347,
+                0.0,
+                0.0
+            ],
+            "name": "blendShape1.Mesh1"
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 31218,
+            "bufferView": 8,
+            "byteOffset": 0,
+            "min": [
+                -0.298111081123352,
+                0.0,
+                -0.374730914831161
+            ],
+            "max": [
+                0.416179150342941,
+                0.0,
+                0.554264605045319
+            ],
+            "name": "blendShape1.Mesh"
+        }
+    ],
+    "images": [
+        {
+            "name": "head3d.jpg",
+            "uri": "head3d.jpg"
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "textures": [
+        {
+            "name": "head3d:material_1F",
+            "sampler": 0,
+            "source": 0
+        }
+    ],
+    "materials": [
+        {
+            "name": "head3d:material_1",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Phong",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0,
+                    "texCoord": 0
+                },
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.400000005960464,
+                "roughnessFactor": 0.377964466810226
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "head3d:Mesh",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 4,
+                        "POSITION": 3,
+                        "TEXCOORD_0": 5
+                    },
+                    "indices": 2,
+                    "targets": [
+                        {
+                            "POSITION": 6
+                        },
+                        {
+                            "POSITION": 7
+                        },
+                        {
+                            "POSITION": 8
+                        }
+                    ]
+                }
+            ],
+            "weights": [
+                0.0,
+                0.633333325386047,
+                0.0
+            ]
+        }
+    ],
+    "animations": [
+        {
+            "name": "Take 001",
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 1,
+                        "path": "weights"
+                    }
+                }
+            ],
+            "samplers": [
+                {
+                    "input": 0,
+                    "interpolation": "LINEAR",
+                    "output": 1
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "head3d:Mesh",
+            "translation": [
+                0.0,
+                0.0927144885063171,
+                0.00381509773433208
+            ],
+            "rotation": [
+                0.0,
+                0.678879678249359,
+                0.0,
+                0.734249532222748
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 0
+        }
+    ]
+}

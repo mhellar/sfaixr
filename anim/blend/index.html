@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script
+    src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  <!-- import randomizer component -->
+  <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+  <!-- import entity generator component -->
+  <script
+    src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+  <script>
+    AFRAME.registerComponent('model-opacity', {
+      schema: { default: 1.0 },
+      init: function () {
+        this.el.addEventListener('model-loaded', this.update.bind(this));
+      },
+      update: function () {
+        var mesh = this.el.getObject3D('mesh');
+        var data = this.data;
+        if (!mesh) { return; }
+        mesh.traverse(function (node) {
+          if (node.isMesh) {
+            node.material.opacity = data;
+            node.material.transparent = data < 1.0;
+            node.material.needsUpdate = true;
+          }
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-mixin id="teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;">
+      </a-mixin>
+
+      <a-asset-item id="face" src="dan_out/dan.gltf" position="0 -1 0"></a-asset-item>
+      <a-asset-item id="cherni" src="cherni_out/cherni.gltf" position="0 -1 0"></a-asset-item>
+      <a-asset-item id="man" src="man3.glb" position="0 -1 0"></a-asset-item>
+
+
+      <!-- mixin for geometry and material -->
+      <a-mixin id="model1" gltf-model="#face" animation-mixer model-opacity="1"></a-mixin>
+      <!-- mixin for randomizer component -->
+      <a-mixin id="random-1" random-position="min: -50 -50 -50; max: 50 50 50"
+        random-scale="min: 30 30 30; max: 50 50 50"></a-mixin>
+    </a-assets>
+
+    <!-- create default environment -->
+    <a-entity environment="preset: goaland"></a-entity>
+
+    <!-- <a-sound src="assets/sound/magic.mp3" autoplay="true"></a-sound> -->
+
+    <a-entity entity-generator="mixin: random-1 model1; num: 100" animation-mixer></a-entity>
+
+
+
+    <a-gltf-model src="#stand" scale="20 20 20" position="0 0 -3" animation-mixer></a-gltf-model>
+
+    <a-gltf-model src="#man" scale="5 5 5" position="0 0 -2" animation-mixer></a-gltf-model>
+
+    <a-gltf-model src="#cherni" scale="11.32265 11.51618 11.51618" position="-4.10263 0.30028 -1.22141"
+      rotation="0 -90 0" animation-mixer>
+    </a-gltf-model>
+    <!-- try putting the sound here -->
+
+  </a-scene>
+</body>
+
+</html>
+
+<html>
