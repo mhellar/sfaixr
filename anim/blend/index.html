@@ -6,6 +6,8 @@
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
   <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
+  <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
   <script
     src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
   <!-- import randomizer component -->
@@ -13,6 +15,7 @@
   <!-- import entity generator component -->
   <script
     src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+    <script src="js/aframe-shader-frog.js"></script>
   <script>
     AFRAME.registerComponent('model-opacity', {
       schema: { default: 1.0 },
@@ -50,17 +53,58 @@
       <a-mixin id="model1" gltf-model="#face" animation-mixer model-opacity="1"></a-mixin>
       <!-- mixin for randomizer component -->
       <a-mixin id="random-1" random-position="min: -50 -50 -50; max: 50 50 50"
-        random-scale="min: 30 30 30; max: 50 50 50"></a-mixin>
+        random-scale="min: 50 50 50; max: 100 100 100"></a-mixin>
     </a-assets>
-
+    
     <!-- create default environment -->
-    <a-entity environment="preset: goaland"></a-entity>
+    <!-- <a-entity id="enviro" position="0 -.001 0" environment="
+    preset: tron; 
+    groundYScale: 100; 
+    fog: 0.4; 
+    dressingAmount: 50; 
+    groundColor2: #008eb7; 
+    groundColor: #b34093; 
+    groundTexture: checkerboard;
+    ground: hills;
+    active: true; seed: 17; 
+    skyType: gradient; 
+    skyColor: #87faf4; 
+    horizonColor: #b50200;
+    flatShading: true; 
+    dressing: none;
+    dressingColor: #3cf7ed; 
+    dressingScale: 0.2; 
+    dressingAmount: 200;
+    dressingOnPlayArea: 1; 
+    gridColor: #239893">
+    </a-entity> -->
+
+    <a-sphere radius="18" position="0 5 0" scale="10 10 10" side="double"
+    shader-frog="src:url(shaders/Sun.json)"></a-sphere>
+</a-entity>
+
+    <a-curve id="track1">
+      <a-curve-point position="-16 19 -33"></a-curve-point>
+      <a-curve-point position="7 24 -57"></a-curve-point>
+      <a-curve-point position="53 7 5"></a-curve-point>
+      <a-curve-point position="22 9 17"></a-curve-point>
+      <a-curve-point position="29 6 42"></a-curve-point>
+      <a-curve-point position="27 33.45 60"></a-curve-point>
+      <a-curve-point position="-33 6.0 27"></a-curve-point>
+      <a-curve-point position="-16 19 -33"></a-curve-point>
+  </a-curve>
+  <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+
+  <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>
+
+  <a-entity id="cameraRig" alongpath="curve: #track1; loop: true; dur: 300000">
+  /<a-camera></a-camera>>
+</a-entity>
+
 
     <!-- <a-sound src="assets/sound/magic.mp3" autoplay="true"></a-sound> -->
 
     <a-entity entity-generator="mixin: random-1 model1; num: 100" animation-mixer></a-entity>
-
-
 
     <a-gltf-model src="#stand" scale="20 20 20" position="0 0 -3" animation-mixer></a-gltf-model>
 
