@@ -21,14 +21,12 @@
             },
             init: function () {
                 for (var i = 0; i < this.data.amount; i++) {
-                    for (var j = 0; j < this.data.amount; j++) {
                     var box = document.createElement('a-text');
                     box.setAttribute('color', this.data.color);
-                    box.setAttribute('position', '0 ' + i * 0.25 + ' ' + j * 0.25);
+                    box.setAttribute('position', '0 ' + i * 0.25 + ' -2');
                     box.setAttribute('scale', '1 1 1');
                     box.setAttribute('value', this.data.message);
                     this.el.appendChild(box);
-                    }
                 }
             }
         });
@@ -38,12 +36,12 @@
 <body>
     <a-scene>
         <!-- Attach components to an entity tag by adding the name -->
-        <a-entity hello-world="message: 'hi there'; amount: 30; color: orange" position="-1 2 0"></a-entity>
+        <a-entity hello-world="message: 'hi there'; amount: 10; color: orange" position="-1 2 0"></a-entity>
 
-        <a-entity hello-world="message: 'what's up; amount: 30; color: grey" position="0 2 0"></a-entity>
+        <a-entity hello-world="message: 'what's up; amount: 50; color: grey" position="0 2 0"></a-entity>
         </a-entity>
 
-        <a-entity hello-world="message: 'great news'; amount: 30; color: teal" position="1 2 0"></a-entity>
+        <a-entity hello-world="message: 'great news'; amount: 1000; color: teal" position="1 2 0"></a-entity>
         </a-entity>
         <!-- uncomment to pass an argument -->
         <!-- <a-entity hello-world=" message: cool news! " position="0 2 -4 "> -->
