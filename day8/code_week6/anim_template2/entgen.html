@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <!-- import randomizer component -->
+    <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+    <!-- import entity generator component -->
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+   
+
+</head>
+
+<body>
+    <a-scene>
+
+        <a-assets>
+          <!-- mixin for geometry and material -->
+        <a-mixin id="box" geometry="primitive: box; radius: 1"></a-mixin>
+          <!-- mixin for randomizer component -->
+        <a-mixin id="random-1" random-position="min: -10 -10 -10; max: 10 10 10"></a-mixin>
+           <!-- mixin for material -->
+        <a-mixin id="red" material="color: #FF4B68"></a-mixin>
+    </a-assets>
+
+    <!-- mixin for geometry and material -->
+    <a-entity entity-generator="mixin: random-1 red box; num: 100"></a-entity>
+
+    <a-box static-body id="ground" width=1000 height=0.001 depth=1000 visible="true"></a-box>
+
+        <a-box id="ground"  width=1000 height=0.001 depth=1000 visible="true"></a-box>
+    </a-scene>
+</body>
