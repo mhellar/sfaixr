@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <!-- add aframe extras -->
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <!-- import randomizer component -->
+  <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+  <!-- import entity generator component -->
+  <script src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="room" src="models/moody_lighting_art_gallery_2019/scene.gltf" position="0 -1 0">
+      </a-asset-item>
+
+      <a-asset-item id="creature" src="models/anim_person_out/anim_person.gltf" position="0 -1 0">
+      </a-asset-item>
+
+      <a-asset-item id="victory" src="models/victory_out/victory.gltf" position="0 -1 0">
+      </a-asset-item>
+
+      <a-asset-item id="head" src="models/head_out/head.gltf" position="0 -1 0">
+      </a-asset-item>
+
+      </a-asset-item>
+
+      <!-- mixin for geometry and material -->
+      <a-mixin id="random-1" random-position="min: -10 -10 -10; max: 10 10 10"></a-mixin>
+      <!-- mixin for material -->
+      <a-mixin id="model1" gltf-model="#creature" animation-mixer scale="80 80 80" ></a-mixin>
+      <a-mixin id="model2" gltf-model="#victory" animation-mixer scale="80 80 80" ></a-mixin>
+      <a-mixin id="model3" gltf-model="#clown" animation-mixer scale="80 80 80" ></a-mixin>
+    </a-assets>
+
+    <a-gltf-model src="#room" scale="0.1 0.1 0.1" position="-3.02544 -0.17931 47.39248"></a-gltf-model>
+
+    <a-gltf-model src="#creature" scale="300 300 300" position="1.64878 .5 -20" animation-mixer>
+    </a-gltf-model>
+
+    <a-gltf-model src="#head" scale="300 300 300" position="3.55497 -1 -28.23104" animation-mixer>
+    </a-gltf-model>
+
+ 
+    <a-entity entity-generator="mixin: random-1 model1; num: 30"></a-entity>
+    <a-entity entity-generator="mixin: random-1 model2; num: 30"></a-entity>
+
+
+
+  </a-scene>
+</body>
+
+</html>bbbbbbb

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Basic Interactions - A-Frame</title>
+    <meta name="description" content="Interactions - A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="gndTexture" src="assets/img/grid.jpg">
+            <img id="brain" src="assets/img/brain.jpg">
+            <img id="dims" src="assets/img/dims.jpeg">
+            <img id="sky" src="assets/img/sky.jpg">
+            <img id="metro" src="assets/img/metro.jpg">
+        </a-assets>
+
+     <!-- Camera Rig with checkpoint movement -->
+      <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+        <a-entity camera
+                  position="0 1.6 0"
+                  look-controls="pointerLockEnabled: true">
+          <a-entity cursor
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+                    material="color: #CCC; shader: flat;"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <!-- Checkpoints -->
+      <a-entity position="1 0 1">
+        <a-cylinder checkpoint="" radius="1" height="0.1" position="5.13342 0 0.36425" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" height="0.1" position="-1.35106 1.07381 0.72317" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint="" radius="1" height="0.1" position="-1.35106 1.07381 -3.52685" color="#39BB82"></a-cylinder>
+      </a-entity>
+
+
+      <!-- interactive cubes -->
+      <a-entity id="cubes" position="0 1 -1.465">
+        <a-box position="-3 1 -5" rotation="0 90 30" scale="" color="#F44336" 
+        event-set__enter="_event: mouseenter; _target: #wall; material.src: #brain"
+        event-set__enter="_event: mouseenter; _target: #ground; color: #F44336"
+        sound="src: assets/sound/sound9.mp3; on: mouseenter" 
+        animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;">
+    </a-box>
+    <a-box position=" -1 2 -5 " rotation="0 45 45 " scale="0.75 0.75 0.75" color="#2196F3" 
+        event-set__enter="_event: mouseenter; _target: #wall; material.src: #sky"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #2196F3" 
+        sound="src: assets/sound/sound20.mp3; on: mouseenter"
+        animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;">
+    </a-box>
+    <a-box position="2 2 -4 " rotation="0 45 30 " scale="0.75 0.75 0.75 " color="#009688" 
+        event-set__enter="_event: mouseenter; _target: #wall; material.src: #metro"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #009688" 
+        sound="src: assets/sound/sound24.mp3; on: mouseenter"
+        animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;"
+        >
+    </a-box>
+    <a-box position="1 1 -5 " rotation="0 70 30 " scale="0.9 0.9 0.9 " color="#E91E63" 
+        event-set__enter="_event: mouseenter; _target: #wall; material.src: #dims"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #E91E63" 
+        sound="src: assets/sound/sound27.mp3; on: mouseenter"
+        animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;">
+     </a-box>
+      </a-entity>
+
+      <a-entity id="wall" geometry="primitive: plane; height: 10; width: 10" material="side: double; src:#metro" position="-0.616 11.413 -15.29" scale="2.17 2.17 2.17"></a-entity>
+
+        <a-sky id="bg" color="#fff"></a-sky>
+
+        <a-plane src="#gndTexture" rotation="-90 0 0 " width="50 " height="50 "></a-plane>
+
+    </a-scene>
+</body>
+
+</html>
+
+<!DOCTYPE html>
