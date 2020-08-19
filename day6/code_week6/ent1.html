@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+</head>
+
+<body>
+
+  <a-scene>
+    <a-assets>
+      <a-assets>
+        <a-asset-item id="room" src="assets/models/shades_of_light/scene.gltf" position="0 -1 0">
+        </a-asset-item>
+      </a-assets>
+    </a-assets>
+
+    <a-gltf-model src="#room" scale="1 1 1" position="0 0 0"></a-gltf-model>
+
+    <!-- nesting entities where the parent has an animation component -->
+    <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
+      <!-- child entity has an animation component -->
+      <a-entity geometry="primitive: box" material="color: green; emissive: green; emissiveIntensity: 1;"
+        position="5 0 0" light="type: point; intensity: 2.0; color: green;"></a-entity>
+    </a-entity>
+
+    <a-entity animation="property: rotation; to: 0 360 0; dur: 4000; easing: linear; loop: true">
+      <a-entity geometry="primitive: box" material="color: red; emissive: red; emissiveIntensity: 1;" position="5 0 0"
+        light="type: point; intensity: 2.0; color: red;"></a-entity>
+    </a-entity>
+
+    <a-entity animation="property: rotation; to: 0 -360 0; dur: 4000; easing: linear; loop: true">
+      <a-entity geometry="primitive: box" material="color: yellow; emissive: yellow; emissiveIntensity: 1;"
+        position="5 0 0" light="type: point; intensity: 2.0; color: yellow;"></a-entity>
+    </a-entity>
+
+    <a-plane width="400" shadow="receive: true" height="400" color="white" position="0 -1 -4" rotation="-90 0 0">
+    </a-plane>
+
+    </a-box>
+
+  </a-scene>
+</body>
+
+</html>

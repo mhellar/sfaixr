@@ -1,0 +1,25 @@
+<head>
+  <title>My A-Frame Scene</title>
+  <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <!-- add audio analyzer component -->
+  <script src="https://unpkg.com/aframe-audioanalyser-component@5.4.0/dist/aframe-audioanalyser-component.min.js"></script>
+  <script src="js/audioanalyser-volume-scale.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <!-- import audio -->
+      <audio id="song" src="ambient.mp3" autoplay loop></audio>
+      <!-- import a model -->
+      <a-asset-item id="brain" src="models/brain_boss_creature/scene.gltf"></a-asset-item>
+    </a-assets>
+
+
+    <!-- render the model add audioanalyser that target the song and add audioanalyser-volume-scale with a target multiplier -->
+    <a-entity gltf-model="#brain" scale=".09 .09 .09" position="0 0 -10" audioanalyser="src: #song"
+    audioanalyser-volume-scale="multiplier: .001" animation-mixer></a-entity>
+
+
+  </a-scene>
+</body>

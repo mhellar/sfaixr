@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>(XR) Week
-                        2</title>
+    <title>WebVR Workshop: Day 2</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <!-- Code syntax highlighting -->
@@ -30,54 +28,40 @@
     <div class="reveal">
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
-                data-background-size="100px" data-background-transition="zoom">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="100px" data-background-transition="zoom">
                 <figure>
-                    <h2 class="intro">(XR) Week
-                        2</h2 class="intro">
-                    <h2 class="intro">(XR) Week
-                        2</h2 class="intro">
-                    <h2 class="intro">(XR) Week
-                        2</h2 class="intro">
-                    <h2 class="intro">(XR) Week
-                        2</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 2</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 2</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 2</h2 class="intro">
+                    <h2 class="intro">WebVR Workshop: Day 2</h2 class="intro">
                 </figure>
             </section>
-            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
-                data-background-size="90px" data-background-transition="zoom">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="90px" data-background-transition="zoom">
                 <p>Grab the code here:
                     <a href="https://bit.ly/2voWGnG">https://bit.ly/2voWGnG</a>
                 </p>
             </section>
-            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
-                data-background-size="80px" data-background-transition="zoom">
+            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat" data-background-size="80px" data-background-transition="zoom">
                 <ul>
                     <h3>Topics for Today:</h3>
-                    <li class="fragment">Sculptipting in VR</li>
-                    <li class="fragment">Getting to a know good state</li>
-                    <li class="fragment">Sound</li>
-                    <li class="fragment">Animation</li>
-                    <li class="fragment">Teleport Controls and other movement controls</li>
+                    <li class="fragment">360 video with a-videosphere</li>
+                    <li class="fragment">Loading and using models</li>
+                    <li class="fragment">Animated Models</li>
+                    <li class="fragment">Adding sound and spatial sound</li>
+                    <li class="fragment">Parent and Child Transforms and groupings</li>
+                    <li class="fragment">Adding basic interactivity</li>
                 </ul>
             </section>
             <section>
-                3d modeling in VR
-            </section>
-            <section>
-                Getting back into development mode
-            </section>
-            <section>
-                Quick review
-                <a href="https://mhellar.github.io/sfaixr/day1">Quick review</a>
-            </section>
-            <section>
-                a-entity tag
                 <ul>
-                    <li class="fragment">So far we've mainly been working with the built in aframe primitive like a-box,
-                        a-sphere etc..</li>
-                    <li class="fragment">Theres another way to add elements to the scene with a-entity</li>
-                    <li class="fragment">By itself, a-entity has no appearance, behavior, or functionality.</li>
-                    <li class="fragment">To extend a-entity you attach a component to it which gives it new atrributes
+                    <li>Loading a 360 video</li>
+                    <li class="fragment">
+                        <a href="https://aframe.io/docs/0.8.0/primitives/a-videosphere.html">use the a-videosphere primitive</a>
+                    </li>
+                    <li class="fragment">It's just like loading an image</li>
+                    <li class="fragment">Lets lookat v1.html</li>
+                    <li class="fragment">
+                        <a href="https://www.mettle.com/360vr-master-series-free-360-downloads-page/">Some 360 videos to DL</a>
                     </li>
                 </ul>
             </section>
@@ -91,32 +75,19 @@
                 <pre><code data-trim>
                         <a-entity geometry="primitive: sphere; radius: 1.5"
                         light="type: point; color: white; intensity: 2"
-                        material="color: white; shader: flat; src: glow.jpg"          
+                        material="color: white; shader: flat; src: glow.jpg"
                         position="0 0 -5"></a-entity>
     </code></pre>
 
             </section>
-
-            <section>
-                Mixins provide a way to compose and reuse commonly-used sets of component properties. They are defined
-                using the a-mixin element and are placed in a-assets. Mixins should be set with an id, and when an
-                entity sets that id as its mixin attribute, the entity will absorb all of the mixin’s
-                attributes.<br><br>
-                Lets look at 2.html
-                <a href="https://aframe.io/docs/0.9.0/core/mixins.html#sidebar">Mixin reference</a>
-
-            </section>
-
-
             <section>
                 <ul>
                     <li>Loading a 3d model</li>
-                    <li class="fragment">Out of the box A-frame support to 3d model file formats obj, collada and gltf
-                    </li>
+                    <li class="fragment">Out of the box A-frame support to 3d model file formats obj, collada and gltf</li>
                     <li class="fragment">Obj has a .obj file for the geometry and a .mtl file for the texture</li>
                     <li class="fragment">Obj is the classic format, Look at 1.html and 2.html</li>
                     <li class="fragment">
-                        <a href="https://aframe.io/docs/0.9.0/primitives/a-obj-model.html">Obj Import reference</a>
+                        <a href="https://aframe.io/docs/0.8.0/primitives/a-obj-model.html">Obj Import reference</a>
                     </li>
                 </ul>
                 <pre><code data-trim class="fragment">
@@ -129,14 +100,9 @@
 <!-- goes in a-scene -->
 <a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
 </a-entity>
-            
+
 </code></pre>
 
-            </section>
-
-            <section>
-                Take a look at 2.html
-                Take a look at 3.html
             </section>
 
             <section>
@@ -156,9 +122,9 @@
 </a-asset-item>
 
 <!-- goes in a-scene -->
-<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"> 
+<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03">
 </a-entity>
-            
+
                     </code></pre>
 
             </section>
@@ -171,7 +137,7 @@
                     <li class="fragment">Look at 3.html in the code folder</li>
                     <li class="fragment">Obj has a .obj file for the geometry and a .mtl file for the texture</li>
                     <li class="fragment">
-                        <a href="https://aframe.io/docs/0.9.0/components/gltf-model.html">GLTF model reference</a>
+                        <a href="https://aframe.io/docs/0.8.0/components/gltf-model.html">GLTF model reference</a>
                     </li>
                 </ul>
                 <pre><code data-trim class="fragment">
@@ -180,9 +146,9 @@
 </a-asset-item>
 
 <!-- goes in a-scene -->
-<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"> 
+<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03">
 </a-entity>
-            
+
                     </code></pre>
 
             </section>
@@ -193,7 +159,7 @@
                     <li class="fragment">GLTF models can have animation baked in</li>
                     <li class="fragment">You need to add the Aframe extras package for this to work</li>
                     <li class="fragment">add animation-mixer into your a-gltf-model tag</li>
-                    <li class="fragment">Look at 5.html in the code folder</li>
+                    <li class="fragment">Look at 4.html in the code folder</li>
                     <li class="fragment">
                         <a href="https://github.com/donmccurdy/aframe-extras">Aframe extras package</a>
                     </li>
@@ -209,7 +175,7 @@
 <!-- goes in a-scene note animation-mixer-->
 <a-gltf-model src="#stand" scale="1 1 1" position="0 0 -3" animation-mixer>
 </a-gltf-model>
-            
+
                     </code></pre>
 
             </section>
@@ -227,8 +193,7 @@
                         <a href="https://3dwarehouse.sketchup.com/?hl=en">3d Warehouse</a>
                     </li>
                     <li class="fragment">
-                        <a
-                            href="https://sketchfab.com/models?features=downloadable&sort_by=-likeCount&type=models">Sketchfab</a>
+                        <a href="https://sketchfab.com/models?features=downloadable&sort_by=-likeCount&type=models">Sketchfab</a>
                     </li>
                     <li class="fragment">
                         <a href="https://www.mixamo.com/">Mixamo animated models</a>
@@ -251,15 +216,42 @@
                         <a href="https://github.com/AnalyticalGraphicsInc/obj2gltf">OBJ to GLTF</a>
                     </li>
             </section>
+
             <section>
                 <p>Can you import one of the models from the assets/models folder?</p>>
             </section>
+
+            <section>
+                <ul>
+                    <li>Adding sound and spatial sound</li>
+                    <li class="fragment">Adding audio is easy</li>
+                    <li class="fragment">Just use the a-sound tag</li>
+                    <li class="fragment">use the src attribute to specify the sound to play</li>
+                    <li class="fragment">normally you would load it fist in the a-assets, ut there's a bug that is being fixed</li>
+                    <li class="fragment">Put it inside someting to make the sound spatial</li>
+                    <li class="fragment">Look at 5.html</li>
+                    <li class="fragment">
+                        <a href="https://aframe.io/docs/0.8.0/primitives/a-sound.html">A-sound reference with options like loop and volume etc..</a>
+                    </li>
+                </ul>
+                <pre><code data-trim class="fragment">
+<!-- goes in a-assets (not working)-->
+<!-- <audio id="magic" src="assets/sound/magic.mp3" preload="auto"></audio> -->
+</a-asset-item>
+
+<!-- goes in a-scene note animation-mixer-->
+<a-sound src="assets/sound/magic.mp3" autoplay="true"></a-sound>
+</a-gltf-model>
+            
+                    </code></pre>
+
+            </section>
+
             <section>
                 <ul>
                     <li>Parent and Child Transforms</li>
                     <li class="fragment">Entities can have a single parent and multiple children.</li>
-                    <li class="fragment">Child entities inherit transformations (i.e., position, rotation, and scale)
-                        from their parent.</li>
+                    <li class="fragment">Child entities inherit transformations (i.e., position, rotation, and scale) from their parent.</li>
                     <li class="fragment">You can also group things in an a-entity tag</li>
                     <li class="fragment">Look at 6.html</li>
                 </ul>
@@ -269,27 +261,61 @@
      <!-- a-sphere postioned at "0 1 1" parented from the first sphere -->
       <a-sphere position="0 1 1" radius="1.25" color="#EF2D5E"></a-sphere>
 </a-sphere>
-                    
+
  <!-- a-sphere postioned at "0 1 1" with no parent -->
 <a-sphere position="0 1 1" radius="1.25" color="blue"></a-sphere>
                     </code></pre>
 
             </section>
+
             <section>
                 <ul>
-                    <li>In 7.html we are adding some machinations for user Interactions with laser controls and a gaze cursor</li>
+                    <li>a-entity tag</li>
+                    <li class="fragment">So far we've mainly been working with the built in aframe primitive like a-box, a-sphere etc..</li>
+                    <li class="fragment">Theres another way to add elements to the scene with a-entity</li>
+                    <li class="fragment">By itself, a-entity has no appearance, behavior, or functionality.</li>
+                    <li class="fragment">To extend a-entity you attach a component to it which gives it new atrributes</li>
+                    <li class="fragment">There are many avialable components which are built into aframe and externally</li>
+                    <li class="fragment">Lets look at the built in a-frame ones https://aframe.io/docs/0.8.0/components/background.html</li>
+                    <li class="fragment">Components are written in Javascript, we'll start writing in a little bit</li>
+                </ul>
+            </section>
+
+            <section>
+                <pre><code data-trim >
+<!-- doesnt do much by itelf -->
+<a-entity></a-entity>
+
+<!-- here we are attaching a-frames geometry and material components which give us new attibutes -->
+<!-- components give new features to a blank entity -->
+<a-entity geometry="primitive: box" material="color: red">
+</a-entity>
+
+<!-- Loading an obj model uses the obj-model component attached to an entity -->
+<a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
+</a-entity>
+</code></pre>
+            </section>
+            <section>
+                <p>Homework read:
+                    <a href="https://aframe.io/docs/0.8.0/introduction/entity-component-system.html">entity-component system</a>
+                </p>
+            </section>
+
+            <section>
+                <ul>
+                    <li>Basic Interactions, Have a look at 7.html</li>
                     <li class="fragment">Let make something that can interact with things</li>
                     <li class="fragment">for people with no headset lets create an
-                        <a href="https://aframe.io/docs/0.9.0/primitives/a-cursor.html">a-cursor</a> primitve and parent
-                        to the camera</li>
+                        <a href="https://aframe.io/docs/0.8.0/primitives/a-cursor.html">a-cursor</a> primitve and parent to the camera</li>
                     <li class="fragment">Also lets make a blank a-entity and add the
-                        <a href="https://aframe.io/docs/0.9.0/components/laser-controls.html">Laser Control</a>
-                        component</li>
+                        <a href="https://aframe.io/docs/0.8.0/components/laser-controls.html">Laser Control</a> component</li>
                 </ul>
                 <pre><code data-trim class="fragment">
         <!-- Laser controls for 2 hands we only have one though -->
 <a-entity laser-controls="hand: left"></a-entity>
 <a-entity laser-controls="hand: right"></a-entity>
+
 <a-camera>
     <!-- a-cursor gives a control to ppl with no headset -->
 <a-cursor></a-cursor>
@@ -299,17 +325,15 @@
 
             <section>
                 <ul>
-                    <li>Basic Interactions, Have a look at 8.html and 8a.html</li>
+                    <li>Basic Interactions, Have a look at 8.html</li>
                     <li class="fragment">We will use the
                         <a href="https://github.com/ngokevin/kframe/tree/master/components/event-set/"> event-set</a>
                         component</li>
-                    <li class="fragment">This component is not part of a-frame core so we need to add it in between the
-                        head tags</li>
-                    <li class="fragment">we can attach the event set component to an entity in this case a-box and tell
-                        it what to do</li>
+                    <li class="fragment">This component is not part of a-frame core so we need to add it in between the head tags</li>
+                    <li class="fragment">we can attach the event set component to an entity in this case a-box and tell it what to do</li>
                     <li class="fragment">look at the reference for the syntax</li>
                     <li class="fragment">laser controls have all the same events as
-                        <a href="https://aframe.io/docs/0.9.0/components/cursor.html">cursor controls</a>
+                        <a href="https://aframe.io/docs/0.8.0/components/cursor.html">cursor controls</a>
                         component</li>
                     </li>
                 </ul>
@@ -337,8 +361,7 @@
             <section>
                 <ul>
                     <li>Basic Interactions, Have a look at 10.html</li>
-                    <li class="fragment">You can attach a sound to an entity and have it listen for mouseevents as well
-                    </li>
+                    <li class="fragment">You can attach a sound to an entity and have it listen for mouseevents as well</li>
                 </ul>
                 <pre><code data-trim class="fragment">
 <a-box position="1 1 -5 " rotation="0 70 30 " scale="0.9 0.9 0.9 " color="#E91E63 " event-set__enter="_event: mouseenter;
@@ -356,15 +379,15 @@ _target: #bg; color: #E91E63" sound="src: assets/sound/sound27.mp3; on: mouseent
                     <li>11.html uses thumbpad movement controls.</li>
                     <li>This tends to make people sick though</li>
                     <li><a href="https://github.com/donmccurdy/aframe-extras">This comes from the A-frame extras package</a></li>
-                </ul>  
+                </ul>
             </section>
-        
+
             <section>
                     <ul>
                             <li>12.html uses teleport controls.</li>
                             <li><a href="https://github.com/fernandojsg/aframe-teleport-controls">A-Frame teleport component</a></li>
                             </li>
-                        </ul>  
+                        </ul>
             </section>
 
             <section>
@@ -373,7 +396,7 @@ _target: #bg; color: #E91E63" sound="src: assets/sound/sound27.mp3; on: mouseent
                             <li><a href="https://github.com/protyze/aframe-curve-component">A-Frame curve component</a></li>
                             <li><a href="https://github.com/protyze/aframe-alongpath-component">A-Frame alongpath component</a></li>
                             </li>
-                        </ul>  
+                        </ul>
             </section>
 
             <section>
@@ -383,8 +406,8 @@ _target: #bg; color: #E91E63" sound="src: assets/sound/sound27.mp3; on: mouseent
                 to an a-entity tag. Components are configurable, reusable, and shareable. Most code in an A-Frame
                 application should live within components.
             </section>
-            
- 
+
+
             <section>
                 You use the AFRAME.registerComponent() function to register a component, do this before
                 <a-scene></a-scene> Have a look at comp.html
@@ -407,7 +430,7 @@ _target: #bg; color: #E91E63" sound="src: assets/sound/sound27.mp3; on: mouseent
             <section>
                     <li><a href="https://aframe.io/docs/0.9.0/introduction/writing-a-component.html">writing a component reference</a>
                     </li>
-                    
+
             </section>
             <section>
                 We’ll go over examples on writing components. The examples will do mostly trivial things at first but
@@ -454,19 +477,9 @@ _target: #bg; color: #E91E63" sound="src: assets/sound/sound27.mp3; on: mouseent
             </section>
 
             <section>
-                <ul>
-                    <li>In 18.html we combine the last lesson with multiple schema propeties and entities</li>
-                    <li>Let's take a look</li>
-                </ul>
+                <a href="https://medium.com/@cwervo/turning-a-screenshot-into-a-facebook-360-image-6e37919f6525">Take a screenshot of your VR scene and post as a Facebook 360 image</a>
             </section>
 
-            <section>
-                <ul>
-                    <li>Let's take a look at Lesson 19.html, in this example we append the animation atrribute</li>
-                </ul>
-            </section>
-
-            
         </div>
     </div>
     </div>

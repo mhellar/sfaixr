@@ -1,0 +1,329 @@
+{
+    "asset": {
+        "generator": "FBX2glTF v0.9.7",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "buffers": [
+        {
+            "byteLength": 279276,
+            "uri": "buffer.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 4800,
+            "byteOffset": 0
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14400,
+            "byteOffset": 4800
+        },
+        {
+            "buffer": 0,
+            "byteLength": 25680,
+            "byteOffset": 19200,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 41364,
+            "byteOffset": 44880,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 41364,
+            "byteOffset": 86244,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 27576,
+            "byteOffset": 127608,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 41364,
+            "byteOffset": 155184,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 41364,
+            "byteOffset": 196548,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 41364,
+            "byteOffset": 237912,
+            "target": 34962
+        }
+    ],
+    "scenes": [
+        {
+            "name": "Root Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "componentType": 5126,
+            "type": "SCALAR",
+            "count": 1200,
+            "bufferView": 0,
+            "byteOffset": 0,
+            "min": [
+                0.0
+            ],
+            "max": [
+                49.9583320617676
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "SCALAR",
+            "count": 3600,
+            "bufferView": 1,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5123,
+            "type": "SCALAR",
+            "count": 12840,
+            "bufferView": 2,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 3447,
+            "bufferView": 3,
+            "byteOffset": 0,
+            "min": [
+                -0.221907317638397,
+                -0.000633697491139174,
+                -0.220998302102089
+            ],
+            "max": [
+                0.235998153686523,
+                0.797622501850128,
+                0.220250904560089
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 3447,
+            "bufferView": 4,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 3447,
+            "bufferView": 5,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 3447,
+            "bufferView": 6,
+            "byteOffset": 0,
+            "min": [
+                -0.371768742799759,
+                0.0,
+                -2.09551787376404
+            ],
+            "max": [
+                3.10194063186646,
+                0.543574273586273,
+                1.37182831764221
+            ],
+            "name": "blendShape1.Chernyi3"
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 3447,
+            "bufferView": 7,
+            "byteOffset": 0,
+            "min": [
+                -0.108969010412693,
+                -0.0465723015367985,
+                -0.0415427759289742
+            ],
+            "max": [
+                0.110544078052044,
+                0.141510158777237,
+                0.250135689973831
+            ],
+            "name": "blendShape1.Chernyi2"
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 3447,
+            "bufferView": 8,
+            "byteOffset": 0,
+            "min": [
+                -0.0874214544892311,
+                0.0,
+                -0.102244943380356
+            ],
+            "max": [
+                0.0874211117625237,
+                0.543574273586273,
+                0.250135689973831
+            ],
+            "name": "blendShape1.Chernyi1"
+        }
+    ],
+    "images": [
+        {
+            "name": "Chernyi_light.png",
+            "uri": "Chernyi_light.png"
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "textures": [
+        {
+            "name": "file2",
+            "sampler": 0,
+            "source": 0
+        }
+    ],
+    "materials": [
+        {
+            "name": "lambert3",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Lambert",
+                    "isTruePBR": false
+                }
+            },
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0,
+                    "texCoord": 0
+                },
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.200000002980232,
+                "roughnessFactor": 0.800000011920929
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Chernyi",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 4,
+                        "POSITION": 3,
+                        "TEXCOORD_0": 5
+                    },
+                    "indices": 2,
+                    "targets": [
+                        {
+                            "POSITION": 6
+                        },
+                        {
+                            "POSITION": 7
+                        },
+                        {
+                            "POSITION": 8
+                        }
+                    ]
+                }
+            ],
+            "weights": [
+                0.309859156608582,
+                1.0,
+                0.0493721961975098
+            ]
+        }
+    ],
+    "animations": [
+        {
+            "name": "Take 001",
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 1,
+                        "path": "weights"
+                    }
+                }
+            ],
+            "samplers": [
+                {
+                    "input": 0,
+                    "interpolation": "LINEAR",
+                    "output": 1
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "Chernyi",
+            "translation": [
+                0.0,
+                0.0,
+                0.0018723983084783
+            ],
+            "rotation": [
+                -2.66925397340856e-08,
+                0.70710676908493,
+                2.66925379577287e-08,
+                0.707106828689575
+            ],
+            "scale": [
+                0.152630880475044,
+                0.152630880475044,
+                0.152630880475044
+            ],
+            "mesh": 0
+        }
+    ]
+}

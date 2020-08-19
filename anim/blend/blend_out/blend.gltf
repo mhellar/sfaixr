@@ -1,0 +1,317 @@
+{
+    "asset": {
+        "generator": "FBX2glTF v0.9.7",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "buffers": [
+        {
+            "byteLength": 5250992,
+            "uri": "buffer.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 4800,
+            "byteOffset": 0
+        },
+        {
+            "buffer": 0,
+            "byteLength": 14400,
+            "byteOffset": 4800
+        },
+        {
+            "buffer": 0,
+            "byteLength": 424056,
+            "byteOffset": 19200,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 848424,
+            "byteOffset": 443256,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 848424,
+            "byteOffset": 1291680,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 565616,
+            "byteOffset": 2140104,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 848424,
+            "byteOffset": 2705720,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 848424,
+            "byteOffset": 3554144,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 848424,
+            "byteOffset": 4402568,
+            "target": 34962
+        }
+    ],
+    "scenes": [
+        {
+            "name": "Root Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "componentType": 5126,
+            "type": "SCALAR",
+            "count": 1200,
+            "bufferView": 0,
+            "byteOffset": 0,
+            "min": [
+                0.0
+            ],
+            "max": [
+                49.9583320617676
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "SCALAR",
+            "count": 3600,
+            "bufferView": 1,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5125,
+            "type": "SCALAR",
+            "count": 106014,
+            "bufferView": 2,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 70702,
+            "bufferView": 3,
+            "byteOffset": 0,
+            "min": [
+                -0.0048090498894453,
+                -0.00934369023889303,
+                -0.00503798993304372
+            ],
+            "max": [
+                0.0048090498894453,
+                0.00712131941691041,
+                0.0097785796970129
+            ]
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 70702,
+            "bufferView": 4,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC2",
+            "count": 70702,
+            "bufferView": 5,
+            "byteOffset": 0
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 70702,
+            "bufferView": 6,
+            "byteOffset": 0,
+            "min": [
+                -0.0103790387511253,
+                -0.00852391961961985,
+                -0.00766278151422739
+            ],
+            "max": [
+                0.010379021987319,
+                0.0119107700884342,
+                0.00893945153802633
+            ],
+            "name": "blendShape1.ZBrushPolyMesh3D2"
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 70702,
+            "bufferView": 7,
+            "byteOffset": 0,
+            "min": [
+                -0.0103790387511253,
+                -0.001128293806687,
+                -0.00766278151422739
+            ],
+            "max": [
+                0.010379021987319,
+                0.0224954504519701,
+                0.00893945153802633
+            ],
+            "name": "blendShape1.ZBrushPolyMesh3D1"
+        },
+        {
+            "componentType": 5126,
+            "type": "VEC3",
+            "count": 70702,
+            "bufferView": 8,
+            "byteOffset": 0,
+            "min": [
+                -0.00410297699272633,
+                -0.001128293806687,
+                -0.0041148723103106
+            ],
+            "max": [
+                0.00410297699272633,
+                0.0119107700884342,
+                0.00411487277597189
+            ],
+            "name": "blendShape1.ZBrushPolyMesh3D"
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "materials": [
+        {
+            "name": "lambert1",
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "fromFBX": {
+                    "shadingModel": "Lambert",
+                    "isTruePBR": false
+                }
+            },
+            "emissiveFactor": [
+                1.0,
+                0.0153999999165535,
+                0.0
+            ],
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.0,
+                    0.800000011920929,
+                    0.069520004093647,
+                    0.393548369407654
+                ],
+                "metallicFactor": 0.200000002980232,
+                "roughnessFactor": 0.800000011920929
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "ZBrushPolyMesh3D",
+            "primitives": [
+                {
+                    "material": 0,
+                    "mode": 4,
+                    "attributes": {
+                        "NORMAL": 4,
+                        "POSITION": 3,
+                        "TEXCOORD_0": 5
+                    },
+                    "indices": 2,
+                    "targets": [
+                        {
+                            "POSITION": 6
+                        },
+                        {
+                            "POSITION": 7
+                        },
+                        {
+                            "POSITION": 8
+                        }
+                    ]
+                }
+            ],
+            "weights": [
+                1.0,
+                0.995476841926575,
+                0.990799427032471
+            ]
+        }
+    ],
+    "animations": [
+        {
+            "name": "Take 001",
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 1,
+                        "path": "weights"
+                    }
+                }
+            ],
+            "samplers": [
+                {
+                    "input": 0,
+                    "interpolation": "LINEAR",
+                    "output": 1
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "ZBrushPolyMesh3D",
+            "translation": [
+                -0.0156841222196817,
+                0.0127967866137624,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "mesh": 0
+        }
+    ]
+}

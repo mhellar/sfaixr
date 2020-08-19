@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello, WebVR! • A-Frame</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame">
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <!-- add aframe extras -->
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="room" src="models/moody_lighting_art_gallery_2019/scene.gltf" position="0 -1 0">
+      </a-asset-item>
+
+      <a-asset-item id="creature" src="models/anim_person_out/anim_person.gltf" position="0 -1 0">
+      </a-asset-item>
+
+      <a-asset-item id="head" src="models/simpleanim_out/simpleanim.gltf" scale="10 10 10" position="0 -1 0">
+      </a-asset-item>
+
+
+    </a-assets>
+
+    <!-- <a-gltf-model src="#room" scale="0.1 0.1 0.1" position="-3.02544 -0.17931 47.39248"></a-gltf-model> -->
+
+
+
+    <a-gltf-model src="#creature" scale="1.97056 1.97056 1.97056" position="1.77209 -1.5709 8.10227" animation-mixer="" gltf-model="models/map_1089717289_densified_gltf/map_1089717289_densified_mesh_textured_lod0z.gltf">
+    </a-gltf-model>
+    <a-gltf-model src="#creature" scale="300 300 300" position="1.64878 .5 -20" animation-mixer>
+    </a-gltf-model>
+
+    <a-gltf-model src="#head" scale="300 300 300" position="3.55497 -1 -28.23104" animation-mixer>
+    </a-gltf-model>
+
+
+    <a-obj-model src="#crate-obj" mtl="#crate-mtl" rotation="60 0 0" scale=".012 .012 .012"></a-obj-model>
+  </a-scene>
+</body>
+
+</html>

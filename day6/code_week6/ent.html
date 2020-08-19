@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+</head>
+
+<body>
+
+  <a-scene>
+
+
+    <!-- a-entity by itself does nothing -->
+    <a-entity></a-entity>
+
+    <!-- we can start to give it definition with attributes such as geometry, material and postion components -->
+    <a-entity geometry="primitive: box" material="color: red" position="0 1 -2"></a-entity>
+    
+    <!-- we can start to give it definition with attributes such as geometry, material and postion components -->
+    <a-entity geometry="primitive: box" material="color: green; emissive: green; emissiveIntensity: 1;"
+      position="0 3 -2" light="type: point; intensity: 2.0; color: green;"></a-entity>
+
+    <a-plane width="400" shadow="receive: true" height="400" color="white" position="0 -1 -4" rotation="-90 0 0">
+    </a-plane>
+
+    </a-box>
+
+  </a-scene>
+</body>
+
+</html>
