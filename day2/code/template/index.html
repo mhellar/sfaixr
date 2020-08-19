@@ -13,7 +13,7 @@
                 click.parentNode && click.parentNode.removeChild(click);
             });
         });
-    
+        document.querySelector('audio'), play()
     </script>
 
     <!-- styling for the click to start button -->
@@ -47,7 +47,7 @@
             <img id="gndTexture" src="assets/img/grid.jpg">
             <img id="sky" src="assets/img/env.jpg">
 
-            <audio id="metal" preload="auto" crossorigin="anonymous" src="assets/snd/soundin.wav"></audio>
+            <audio id="metal" response-type="arraybuffer" preload="auto" crossorigin="anonymous" src="assets/snd/soundin.wav"></audio>
         </a-assets>
 
         <!-- create a skybox https://aframe.io/docs/1.0.0/primitives/a-sky.html-->
