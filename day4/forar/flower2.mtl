@@ -1,0 +1,24 @@
+newmtl defaultSG
+illum 4
+Kd 0.23 0.10 0.47
+Ka 0.77 0.00 1.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 0.33 0.00
+Ns 0.00
+newmtl defaultSG2
+illum 4
+Kd 0.00 0.16 1.00
+Ka 0.00 0.03 1.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl defaultSG6
+illum 4
+Kd 0.38 0.88 0.00
+Ka 1.00 0.00 0.38
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.14 0.80
+Ns 0.00
