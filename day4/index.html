@@ -43,112 +43,30 @@
                         4</h2 class="intro">
                 </figure>
             </section>
-            <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
-                data-background-size="90px" data-background-transition="zoom">
-                <p>Grab the code here:
-                    <a href="https://bit.ly/38mPlHE">https://bit.ly/38mPlHE</a>
-                </p>
+            <section>
+                <ul>
+                    <li>Midterm</li>
+                    <li class="fragment">Looks at AR exaples you like or defineyour own use case</li>
+                    <li class="fragment">Consider adding interactivity of the user</li>
+                    <li class="fragment">Make 2-3 AR sketches a week and refine</li>
+                    <li class="fragment">Make use of 2D and 3d assets</li>
+                    <li class="fragment">Share a final link(qr code) and record a video</li>
+                </ul>
+            </section>
+            <section>
+                Aero - more features
             </section>
             <section data-background="img/72-points-mesh.svg" data-background-repeat="repeat"
                 data-background-size="80px" data-background-transition="zoom">
                 <ul>
                     <h3>Topics for Today:</h3>
-                    <li class="fragment">360 Video</li>
-                    <li class="fragment">Importing 3d Models</li>
+                    <li class="fragment">Getting 3d Models</li>
                     <li class="fragment">Adding Spatial Sound</li>
-                    <li class="fragment">Basic Animation</li>
-                    <li class="fragment">MagicaVoxel</li>
+                    <li class="fragment">Mixamo</li>
+                    <li class="fragment">Basic Look at Maya</li>
 
                 </ul>
             </section>
-            <section>
-                Dealing with 360 video
-            </section>
-            <section>
-                For the Gear 360 footage you need to stich the footage. Software is <a hreaf="https://www.samsung.com/ca/support/mobile-devices/gear-360-2017-how-i-install-the-cyberlink-action-director-software/">here</a>
-            </section>
-            <section>
-                Install Code: RFAJ509AAF1R
-            </section>
-            <section>
-                <a href="https://github.com/mhellar/sfaixr/blob/master/day4/vid.zip?raw=true">360 Video Template</a>
-            </section>
-            <section>
-                Editing 360 video in premiere <a href="https://studio.knightlab.com/results/storytelling-layers-on-360-video/how-to-edit-360-video-in-premiere/">reference</a>
-            </section>
-            <section>
-                In these some of these scenes I'm using the <a
-                    href="https://github.com/supermedium/aframe-environment-component">A-frame environment component</a>
-                to
-                quickly add atmosphere</a><br>
-                Let's look at 1.html
-            </section>
-
-
-            <section>
-                <ul>
-                    <li>Loading a 3d models</li>
-                    <li class="fragment">A-frame has built in support for 3d model file formats
-                    </li>
-                    <li class="fragment">There are many different file formats like .obj, .gltf and collada
-                    </li>
-                    <li class="fragment">Obj has a .obj file for the geometry and can have a .mtl file for the texture
-                    </li>
-                    <li class="fragment">Obj is the classic format, Look at 2.html</li>
-                    <li class="fragment">
-                        <a href="https://aframe.io/docs/0.9.0/primitives/a-obj-model.html">Obj Import reference</a>
-                    </li>
-                </ul>
-                <pre><code data-trim class="fragment">
-<!-- goes in a-assets-->
-<a-asset-item id="si-obj" src="assets/models/si/space_invader.obj">
-</a-asset-item>
-<a-asset-item id="si-mtl" src="assets/models/si/space_invader.mtl">
-</a-asset-item>
-
-<!-- goes in a-scene -->
-<a-entity obj-model="obj: #si-obj; mtl: #si-mtl" position="-5 18 25">
-</a-entity>
-            
-</code></pre>
-
-            </section>
-
-
-            <section>
-                <ul>
-                    <li>GLTF (GL Transmission Format),JPEG of 3D</li>
-                    <li class="fragment">This new format aims to be the standard</li>
-                    <li class="fragment">This is the modern and preferred format for WebXR</li>
-                    <li class="fragment">Look at 3.html in the code folder</li>
-                    <li class="fragment">Obj has a .obj file for the geometry and a .mtl file for the texture</li>
-                    <li class="fragment">
-                        <a href="https://aframe.io/docs/0.8.0/components/gltf-model.html">GLTF model reference</a>
-                    </li>
-                </ul>
-                <pre><code data-trim class="fragment">
-<!-- goes in a-assets-->
-<a-asset-item id="temple" src="assets/models/temple_environment/scene.gltf" position="0 -1 0">
-</a-asset-item>
-
-<!-- goes in a-scene -->
-<a-entity gltf-model="#temple" position="0 .4 -20" scale="0.03, 0.03, 0.03"> 
-</a-entity>
-            
-                    </code></pre>
-
-            </section>
-
-
-            <section>
-                GTLF Models can have data like animation embedded.
-                To use animations we hve to add a js library called <a
-                    href="https://github.com/donmccurdy/aframe-extras">a-frame extras</a> and add the animation-mixer
-                attibue to the model<br>
-                Let's look at 3a.html
-            </section>
-
-
             <section>
                 <ul>
                     <li>Places to get models</li>
@@ -175,178 +93,15 @@
                 <a href="https://ephtracy.github.io/">MagicaVoxel</a>
             </section>
 
-            <section>
-                <li>Exercise 1a</li>
-                <li>
-                    Take 20 minutes or so and create a model in MagicaVoxel.
-                </li>
-            </section>
 
-            <!-- <section>
+            <section>
                 <ul>
-                    <li>GLTF converters</li>
+                    <li>Mixamo</li>
                     <li class="fragment">
-                        <a href="https://github.com/pissang/clay-viewerm">Clay Viewer</a>
+                        <a href="https://www.mixamo.com/">Mixamo animated models</a>
                     </li>
-                    <li class="fragment">
-                        <a href="http://52.4.31.236/convertmodel.html">Online Converter</a>
-                    </li>
-                    <li class="fragment">
-                        <a href="https://github.com/facebookincubator/FBX2glTF/releases">FBX to GLTF</a>
-                    </li>
-                    <li class="fragment">
-                        <a href="https://github.com/AnalyticalGraphicsInc/obj2gltf">OBJ to GLTF</a>
-                    </li>
-            </section> -->
-            <section>
-                <li>Exercise 1b</li>
-                <li class="fragment">
-                    Lets look at index.html in excercise1
-                </li>
-                <li class="fragment">
-                    Can you find some models on sketchfab and download it into the models folder
-                </li>
-                <li class="fragment">
-                    Then add them into the code of index.html to create a scene?
-                </li>
-                <li class="fragment">
-                    Start looking for a model and I will come around and help everyone
-                </li>
             </section>
 
-
-            <section>
-                <ul>
-                    <li>Sound</li>
-                    <li class="fragment">Importing Sound
-                    </li>
-                    <li class="fragment">You can import wav and mp3 files
-                    </li>
-                    <li class="fragment">Let look at the <a
-                            href="https://aframe.io/docs/1.0.0/primitives/a-sound.html#sidebar">sound component</a>
-                    </li>
-                    <li class="fragment">Let look at the contents of the sound 1 folder</li>
-                </ul>
-                <pre><code data-trim class="fragment">
-<!-- goes in a-assets-->
-<audio id="swell" crossorigin="anonymous" preload="auto" src="snd/footsteps_high.wav"></audio>
-
-<!-- goes in a-scene -->
-<a-sound src="#swell" autoplay="true" loop="true" volume="1"></a-sound>
-</code></pre>
-
-            </section>
-
-            <section>
-                Adding the <a href="https://aframe.io/docs/1.0.0/components/animation.html#sidebar">animation
-                    attribute</a><br>
-                Let's look at 4.html
-            </section>
-
-            <section>
-                you can animate multiple properties by giving the animation__name convention
-                Let's look at 4a.html
-            </section>
-
-            <section>
-                <li>Exercise 2</li>
-                <li class="fragment">
-                    Lets look at index.html in excercise2
-                </li>
-                <li class="fragment">
-                    Let add some colleted sounds, 360 models and animations to it
-                </li>
-                <li class="fragment">
-                    We'll do this one on one
-                </li>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Lights</li>
-                    <li class="fragment">Look at scene l1.html</li>
-                    <li class="fragment">As the cube rotates the light reflects off of it</li>
-                    <li class="fragment">You need a light or else you wouldn't see anything</li>
-                    <li class="fragment">If we look at the code the is no a-light</li>
-                    <li class="fragment">A-frame add a default light for us</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Lights</li>
-                    <li class="fragment">Look at scene l2.html</li>
-                    <li class="fragment">We added a directional light which streams photons from the upper right</li>
-                    <li class="fragment">Uncomment line 12 and you will have light from both directions</li>
-                    <li class="fragment">Comment line 12 and uncomment line 13</li>
-                    <pre><code data-trim class="fragment">
-<a-light type="directional" position="-1 1 1" color="white"></a-light>
-                </code></pre>
-
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Anbient Lights</li>
-                    <li class="fragment">Look at scene l2.html</li>
-                    <li class="fragment">Comment lines 12 and line 13</li>
-                    <li class="fragment">Uncomment line 14 to add an ambient light</li>
-                    <li class="fragment">Ambient lights affect all places in the scene, regardless of what direction
-                        they are facing.</li>
-                    <li class="fragment">Make suer to not make your ambient lights to intense or it will overide your
-                        directional light</li>
-                    <pre><code data-trim class="fragment">
-<a-light type="ambient" color="white" intensity="0.5"></a-light>
-                    </code></pre>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Point Light and Emissive Materials</li>
-                    <li class="fragment">Look at scene l3.html</li>
-                    <li class="fragment">On line 12 we have created a sphere which has an emmisive attribute</li>
-                    <li class="fragment">An emmisive color allows an object to cast it's own light</li>
-                    <li class="fragment">The emissive color makes the moon visible, but it doesn't produce light that
-                        shines on the rest of the
-                        scene.
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Point Light and Emissive Materials</li>
-                    <li class="fragment">Look at scene l3.html</li>
-                    <li class="fragment">On line 13 we attach a point light to the sphere</li>
-                    <li class="fragment">Point lights are similar to directional lights except that the intensity
-                        decreases as objects get further
-                        away from the light.</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Shadows</li>
-                    <li class="fragment">Look at scene l4.html</li>
-                    <li class="fragment">Shadows are very expensive to compute so they are turned off by default.</li>
-                    <li class="fragment">To work with shadows we need to think of three things:</li>
-                    <li class="fragment">Which light will be used to create the shadow (the moon light)</li>
-                    <li class="fragment">Which object will cast a shadow (the cube)</li>
-                    <li class="fragment">which object will receive a shadow (the plane)</li>
-                </ul>
-            </section>
-
-            <section>
-                <ul>
-                    <li>Shadows</li>
-                    <li class="fragment">Look at scene l4.html</li>
-                    <li class="fragment">To turn on shadows we need to add castShadow:true; to the light, line 14</li>
-                    <li class="fragment">The we add shadow="cast: true" to the cube, line 20</li>
-                    <li class="fragment">And we add shadow="receive: true" to the plane, line 19</li>
-                </ul>
-            </section>
 
         </div>
     </div>
